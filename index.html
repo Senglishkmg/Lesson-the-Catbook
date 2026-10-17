@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>천일문 기본 - 강의 학습</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .unit-btn.is-missing { opacity: .45; pointer-events: none; }
+    .unit-btn.is-missing .soon { display: inline-block; }
+    .soon { display: none; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(90deg); }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen py-8 px-4">
+
+  <div class="w-full max-w-5xl mx-auto">
+
+    <!-- 머리말 -->
+    <header class="bg-white shadow-xl rounded-2xl p-6 sm:p-10 mb-6">
+      <p class="text-sm font-bold text-sky-600 mb-1">천일문 기본</p>
+      <h1 class="text-2xl sm:text-3xl font-black text-slate-800 mb-2">강의 학습 메인</h1>
+      <p class="text-slate-500 text-sm sm:text-base">공부할 Unit을 고르세요. 각 Unit에서 강의 듣기 → 이해 확인 → 마인드맵 → 독해·쓰기 순서로 진행합니다.</p>
+
+      <div class="mt-5 flex flex-col sm:flex-row gap-3">
+        <input id="search" type="search" placeholder="Unit 번호나 제목으로 찾기 (예: 27, 수동태, 관계부사)"
+          class="flex-1 px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100">
+        <div class="flex gap-2">
+          <button id="expandAll" class="px-3 py-2 text-sm rounded-lg border border-slate-200 bg-white hover:bg-slate-50">모두 펼치기</button>
+          <button id="collapseAll" class="px-3 py-2 text-sm rounded-lg border border-slate-200 bg-white hover:bg-slate-50">모두 접기</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 예비 수업 -->
+    <section id="front" class="grid grid-cols-1 gap-3 mb-6"></section>
+
+    <!-- 파트 목록 -->
+    <main id="parts" class="space-y-6"></main>
+
+    <p id="noResult" class="hidden text-center text-slate-500 py-10">찾는 Unit이 없습니다.</p>
+  </div>
+
+<script>
+/* ============================================================
+   파일 이름 규칙 — 바꾸고 싶으면 여기만 고치면 됩니다.
+   Unit 01 → catbookpt01.html ... Unit 101 → catbookpt101.html
+   ============================================================ */
+const unitFile  = n => `catbookpt${String(n).padStart(2, '0')}.html`;
+const FRONT = [
+  { label: '예비 수업', title: '수업 전에: 문장성분과 품사 · 준동사 · 독해란 무엇인가', file: 'catbookpt00.html' },
+];
+
+/* 목차: 숫자 = Unit, = Further Study (바로 앞 Unit에 붙음) */
+const TOC = [
+  { part: 1, title: '문장의 구성', color: 'sky', chapters: [
+    { ch: 1, title: '동사와 문장의 기본 구조', items: [
+      [1,'SV'],[2,'SVA'],[3,'SVC'],
+      [4,'SVO/SVOA'],[5,'SVOO'],[6,'SVOC'],[7,'주의해야 할 동사와 문형'] ]},
+    { ch: 2, title: '주어의 이해', items: [
+      [8,'명사구 주어'],[9,'명사절 주어 Ⅰ'],[10,'명사절 주어 Ⅱ'],[11,'가주어 it'],
+      [12,'to부정사의 의미상의 주어'],[13,'동명사의 의미상의 주어'],
+      [14,'it을 주어로 하는 구문'] ]},
+    { ch: 3, title: '목적어의 이해', items: [
+      [15,'to부정사/동명사 목적어 Ⅰ'],[16,'to부정사/동명사 목적어 Ⅱ'],[17,'명사절 목적어'],[18,'재귀대명사 목적어'],
+      [19,'전치사의 목적어'],[20,'가목적어 it'] ]},
+    { ch: 4, title: '보어의 이해', items: [
+      [21,'다양한 주격보어'],[22,'to부정사 목적격보어'],
+      [23,'원형부정사(v) 목적격보어'],[24,'현재분사(v-ing) 목적격보어'],[25,'과거분사(p.p.) 목적격보어'],[26,'have+목적어+p.p.'] ]},
+  ]},
+  { part: 2, title: '서술어의 이해', color: 'emerald', chapters: [
+    { ch: 5, title: '동사의 시제', items: [
+      [27,'현재시제의 다양한 의미'],[28,'미래를 나타내는 표현'],[29,'현재완료형/현재완료 진행형'],
+      [30,'과거완료형/미래완료형'],[31,'to부정사/동명사의 완료형'] ]},
+    { ch: 6, title: '동사에 의미를 더하는 조동사', items: [
+      [32,'능력(Ability)/허가(Permission)'],[33,'충고(Advisability)/의무(Necessity)'],[34,'현재나 미래에 대한 가능성/추측'],[35,'과거에 대한 가능성/추측/후회'],[36,'should의 특별한 쓰임'],[37,'자주 보이는 조동사 표현'] ]},
+    { ch: 7, title: '동사의 태', items: [
+      [38,'3문형/4문형의 수동태'],[39,'5문형의 수동태'],[40,'조동사/시제와 결합된 수동태'],
+      [41,'형태에 유의해야 할 수동태'],[42,'명령문/의문문 수동태'],[43,'to부정사/동명사의 수동형'] ]},
+    { ch: 8, title: '가정법', items: [
+      [44,'if+가정법 과거'],[45,'if+should/were to'],[46,'if+가정법 과거완료/혼합가정법'],[47,'if 생략 도치구문'],
+      [48,'S+wish+가정법'],[49,'as if+가정법'],[50,'가정법을 이끄는 표현'] ]},
+  ]},
+  { part: 3, title: '수식어구의 이해', color: 'violet', chapters: [
+    { ch: 9, title: '수식어구: to부정사/분사', items: [
+      [51,'to부정사의 형용사적 수식'],[52,'분사(v-ing/p.p.)의 형용사적 수식'],[53,'감정분사(v-ing/p.p.)의 형용사적 수식'],
+      [54,'to부정사의 부사적 수식 Ⅰ'],[55,'to부정사의 부사적 수식 Ⅱ'],[56,'to부정사가 만드는 주요 구문'] ]},
+    { ch: 10, title: '분사구문', items: [
+      [57,'분사구문의 의미'],[58,'주의해야 할 분사구문의 형태'],[59,'주의해야 할 분사구문의 의미상의 주어'] ]},
+  ]},
+  { part: 4, title: '문장의 확장', color: 'amber', chapters: [
+    { ch: 11, title: '등위절과 병렬구조', items: [
+      [60,'등위접속사 and/but/or/for/nor/yet'],[61,'병렬구조'],[62,'both A and B 등'],[63,'one/another/the other가 만드는 표현'], ]},
+    { ch: 12, title: '관계사절', items: [
+      [64,'주격/소유격 관계대명사'],[65,'목적격 관계대명사'],[66,'관계부사'],
+      [67,'관계사와 생략'],[68,'선행사와 떨어진 관계사절'],[69,'명사절을 이끄는 관계대명사 what'],[70,'명사절을 이끄는 복합관계대명사'],
+      [71,'선행사를 보충 설명하는 관계사절 Ⅰ'],[72,'선행사를 보충 설명하는 관계사절 Ⅱ'], ]},
+    { ch: 13, title: '부사절', items: [
+      [73,'시간을 나타내는 부사절 Ⅰ'],[74,'시간을 나타내는 부사절 Ⅱ'],[75,'이유/원인을 나타내는 부사절'],[76,'조건을 나타내는 부사절'],
+      [77,'양보/대조를 나타내는 부사절 Ⅰ'],[78,'양보/대조를 나타내는 부사절 Ⅱ'],
+      [79,'목적/결과를 나타내는 부사절'],[80,'양태를 나타내는 부사절'], ]},
+  ]},
+  { part: 5, title: '주요 구문', color: 'rose', chapters: [
+    { ch: 14, title: '전명구를 동반하는 동사구문', items: [
+      [81,'동사 A from B'],[82,'동사 A for B'],[83,'동사 A as B'],[84,'동사 A of B'],[85,'동사 A to B'],[86,'동사 A with B'] ]},
+    { ch: 15, title: '비교구문', items: [
+      [87,'원급 구문 Ⅰ'],[88,'원급 구문 Ⅱ'],[89,'비교급 구문 Ⅰ'],[90,'비교급 구문 Ⅱ'],[91,'혼동하기 쉬운 비교급 구문 Ⅰ'],
+      [92,'혼동하기 쉬운 비교급 구문 Ⅱ'],[93,'최상급 구문'], ]},
+    { ch: 16, title: '특수구문', items: [
+      [94,'도치구문'],[95,'강조구문'],[96,'생략구문'],[97,'공통구문'],[98,'삽입구문'],[99,'동격구문'],[100,'부정구문'],[101,'주어를 부사로 해석해야 하는 구문'] ]},
+  ]},
+];
+
+/* Tailwind가 클래스를 인식하도록 색상별 클래스를 미리 적어 둠 */
+const COLORS = {
+  sky:     { head: 'bg-sky-600',     chip: 'text-sky-700 bg-sky-50 border-sky-200',         hover: 'hover:bg-sky-50 hover:border-sky-300',         num: 'text-sky-600' },
+  emerald: { head: 'bg-emerald-600', chip: 'text-emerald-700 bg-emerald-50 border-emerald-200', hover: 'hover:bg-emerald-50 hover:border-emerald-300', num: 'text-emerald-600' },
+  violet:  { head: 'bg-violet-600',  chip: 'text-violet-700 bg-violet-50 border-violet-200',   hover: 'hover:bg-violet-50 hover:border-violet-300',   num: 'text-violet-600' },
+  amber:   { head: 'bg-amber-500',   chip: 'text-amber-700 bg-amber-50 border-amber-200',     hover: 'hover:bg-amber-50 hover:border-amber-300',     num: 'text-amber-600' },
+  rose:    { head: 'bg-rose-600',    chip: 'text-rose-700 bg-rose-50 border-rose-200',        hover: 'hover:bg-rose-50 hover:border-rose-300',       num: 'text-rose-600' },
+};
+
+const pad = n => String(n).padStart(2, '0');
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+
+function unitButton(n, title, c) {
+  return `<a href="${unitFile(n)}" data-file="${unitFile(n)}" data-search="unit ${n} ${pad(n)} ${esc(title)}"
+    class="unit-btn flex items-start gap-3 bg-white border border-slate-200 rounded-lg px-3 py-2.5 shadow-sm transition-colors ${c.hover}">
+    <span class="shrink-0 font-black text-sm ${c.num} w-16">Unit ${pad(n)}</span>
+    <span class="text-sm text-slate-700 leading-snug">${esc(title)} <span class="soon ml-1 text-[11px] text-slate-400">준비 중</span></span>
+  </a>`;
+}
+function extraButton(x) {
+  return `<a href="${x.file}" data-file="${x.file}" data-search="${esc(x.label)} ${esc(x.title)}"
+    class="unit-btn flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm hover:bg-slate-50 transition-colors">
+    <span class="shrink-0 text-xs font-bold text-pink-700 bg-pink-50 border border-pink-200 rounded px-2 py-1">${esc(x.label)}</span>
+    <span class="text-sm text-slate-700">${esc(x.title)} <span class="soon ml-1 text-[11px] text-slate-400">준비 중</span></span>
+  </a>`;
+}
+
+function render() {
+  document.getElementById('front').innerHTML = FRONT.map(extraButton).join('');
+
+  document.getElementById('parts').innerHTML = TOC.map(p => {
+    const c = COLORS[p.color];
+    const chapters = p.chapters.map(ch => {
+      const btns = ch.items.map(it => unitButton(it[0], it[1], c)).join('');
+      const first = ch.items[0][0];
+      const lastU = ch.items[ch.items.length - 1][0];
+      return `<details class="chapter bg-slate-50 rounded-xl border border-slate-200" open>
+        <summary class="flex items-center gap-3 px-4 py-3">
+          <span class="chev text-slate-400 transition-transform">▶</span>
+          <span class="text-xs font-bold border rounded px-2 py-0.5 ${c.chip}">CHAPTER ${pad(ch.ch)}</span>
+          <span class="font-bold text-slate-800">${esc(ch.title)}</span>
+          <span class="ml-auto text-xs text-slate-400 hidden sm:inline">Unit ${pad(first)}–${pad(lastU)}</span>
+        </summary>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 px-4 pb-4">${btns}</div>
+      </details>`;
+    }).join('');
+    return `<section class="part bg-white shadow-lg rounded-2xl overflow-hidden">
+      <div class="${c.head} text-white px-5 py-3 flex items-baseline gap-3">
+        <span class="text-xs font-bold tracking-widest opacity-80">PART ${p.part}</span>
+        <h2 class="text-lg font-bold">${esc(p.title)}</h2>
+      </div>
+      <div class="p-4 space-y-3">${chapters}</div>
+    </section>`;
+  }).join('');
+}
+
+/* 아직 올리지 않은 파일은 '준비 중'으로 흐리게 표시 (깃허브 페이지에서만 확인 가능) */
+async function markMissing() {
+  if (location.protocol === 'file:') return; // 내 컴퓨터에서 열면 확인하지 않음
+  const links = [...document.querySelectorAll('.unit-btn')];
+  const queue = links.slice();
+  const worker = async () => {
+    while (queue.length) {
+      const a = queue.shift();
+      try {
+        const r = await fetch(a.dataset.file, { method: 'HEAD', cache: 'no-store' });
+        if (!r.ok) a.classList.add('is-missing');
+      } catch (e) { /* 네트워크 문제면 그대로 둠 */ }
+    }
+  };
+  await Promise.all(Array.from({ length: 8 }, worker));
+}
+
+/* 검색 */
+function applySearch(q) {
+  q = q.trim().toLowerCase();
+  let any = false;
+  document.querySelectorAll('.unit-btn').forEach(a => {
+    const hit = !q || a.dataset.search.toLowerCase().includes(q);
+    a.style.display = hit ? '' : 'none';
+    if (hit) any = true;
+  });
+  document.querySelectorAll('.chapter').forEach(d => {
+    const vis = [...d.querySelectorAll('.unit-btn')].some(a => a.style.display !== 'none');
+    d.style.display = vis ? '' : 'none';
+    if (q && vis) d.open = true;
+  });
+  document.querySelectorAll('.part').forEach(s => {
+    s.style.display = [...s.querySelectorAll('.chapter')].some(d => d.style.display !== 'none') ? '' : 'none';
+  });
+  ['front'].forEach(id => {
+    const el = document.getElementById(id);
+    el.style.display = [...el.querySelectorAll('.unit-btn')].some(a => a.style.display !== 'none') ? '' : 'none';
+  });
+  document.getElementById('noResult').classList.toggle('hidden', any);
+}
+
+render();
+markMissing();
+document.getElementById('search').addEventListener('input', e => applySearch(e.target.value));
+document.getElementById('expandAll').onclick = () => document.querySelectorAll('.chapter').forEach(d => d.open = true);
+document.getElementById('collapseAll').onclick = () => document.querySelectorAll('.chapter').forEach(d => d.open = false);
+</script>
+</body>
+</html>
