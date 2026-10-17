@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 27 · 현재시제의 다양한 의미 | 천일문 기본</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="app"></div>
+<script src="config.js"></script>
+<script>
+/* ================================================================
+   Unit 27 내용
+   - lectures : 들을 강의 (수업 순서대로). optional: true 는 선택 강의
+   - quiz     : 객관식. 없으면 null
+       lecture = 위 강의 목록에서 몇 번째인지 (0부터 셈)
+       from/to = 틀렸을 때 다시 들을 구간, answer = 정답 선택지 번호 (0부터 셈)
+   - mindmap  : 마인드맵 빈칸. 없으면 null  (blank: true 인 칸이 빈칸)
+   - reading  : 독해·쓰기. 없으면 null
+   내용 넣는 방법은 catbookpt27.html 을 보고 그대로 따라 하면 됩니다.
+   ================================================================ */
+window.UNIT = {
+  id: 27,
+  title: "현재시제의 다양한 의미",
+  chapter: "CHAPTER 05 동사의 시제",
+  lectures: [
+    {
+      "id": "Rr3Ly8nZHP4",
+      "title": "Part02 01 동사의 기본형태 5가지",
+      "book": "G3 32p"
+    },
+    {
+      "id": "wyD6hlG8y3k",
+      "title": "Part02 02 동사의 기본변형과 응용변형",
+      "book": "G3 33p"
+    },
+    {
+      "id": "yqSg3n9ggo4",
+      "title": "Part02 03 단순시제와 진행시제",
+      "book": "G3 34p"
+    },
+    {
+      "id": "SmtogLPnD10",
+      "title": "Part02 04 Unit 27의 해석 상",
+      "book": "천일문 unit 27"
+    },
+    {
+      "id": "SX1yxNCxTyY",
+      "title": "Part02 05 현재시제의 쓰임, 현재시제의 미래대용",
+      "book": "G3 35-36p"
+    },
+    {
+      "id": "0mjSrc4I2rg",
+      "title": "Part02 06 Unit 27, 28 해석",
+      "book": "천일문 unit 27, 28"
+    }
+  ],
+  quiz: {
+    "pass": 0.75,
+    "questions": [
+      {
+        "id": "Q1",
+        "lecture": 0,
+        "from": "1:10",
+        "to": "2:16",
+        "q": "강사가 '그가 개를 죽였다 / 죽일 것이다' 두 문장을 비교하며 말하려 한 것은?",
+        "choices": [
+          "행동이 언제 일어났는지는 오직 서술어(동사)를 보고 알 수 있다.",
+          "주어를 보면 행동이 언제 일어났는지 알 수 있다.",
+          "목적어의 형태가 바뀌면서 시간이 표현된다.",
+          "두 문장은 시간만 다를 뿐 뜻의 차이는 크지 않다.",
+          "행동의 시간은 '어제, 내일' 같은 부사로만 나타낼 수 있다."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q2",
+        "lecture": 0,
+        "from": "2:24",
+        "to": "3:17",
+        "q": "강의에서 설명한 '법'의 뜻으로 알맞은 것은?",
+        "choices": [
+          "말하는 내용이 진심(사실)인지, 가짜(가정)로 하는 말인지를 나타내는 것",
+          "주어가 동작을 하는지 당하는지를 나타내는 것",
+          "동작이 일어난 때를 나타내는 것",
+          "주어가 하나인지 여럿인지를 나타내는 것",
+          "문장이 명령인지 질문인지를 나타내는 것"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q3",
+        "lecture": 0,
+        "from": "5:07",
+        "to": "7:49",
+        "q": "우리말 동사 '연주하다'가 '연주한다, 연주하였다'로 바뀌는 방식에 대한 설명으로 알맞은 것은?",
+        "choices": [
+          "뜻을 담은 어간 '연주하-'는 그대로 두고, 문법적 성질을 담은 어미를 갈아 끼운다.",
+          "어미 '-다'는 그대로 두고, 어간을 바꿔 끼운다.",
+          "어간과 어미를 모두 새로운 말로 바꾼다.",
+          "'연주하다'는 원형이라서 그대로 현재시제 문장에 쓸 수 있다.",
+          "어간이 동사의 문법적 성질을, 어미가 동사의 뜻을 담당한다."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q4",
+        "lecture": 0,
+        "from": "11:05",
+        "to": "12:35",
+        "q": "영어 동사의 '원형'에 대한 설명으로 알맞은 것은?",
+        "choices": [
+          "사전에 나와 있는 형태로, 영어로는 Root라고 부르며 다른 형태가 만들어지는 바탕이 된다.",
+          "주어가 3인칭 단수일 때 쓰는 형태이다.",
+          "과거형에서 -ed를 뺀 형태를 말한다.",
+          "동사에 -ing를 붙인 형태를 말한다.",
+          "사전에는 나오지 않고 문장 속에서만 볼 수 있는 형태이다."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q5",
+        "lecture": 0,
+        "from": "12:52",
+        "to": "14:08",
+        "q": "현재형에 대한 설명으로 알맞은 것은?",
+        "choices": [
+          "대개 원형과 같지만, 주어가 3인칭 단수이고 시제가 현재이면 -s/-es를 붙인다.",
+          "언제나 원형에 -s를 붙여서 만든다.",
+          "원형과 완전히 다른 형태라서 따로 외워야 한다.",
+          "be동사의 현재형은 be 그대로 쓴다.",
+          "현재형은 원형에 -ing를 붙인 형태이다."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q6",
+        "lecture": 0,
+        "from": "14:21",
+        "to": "15:52",
+        "q": "과거형과 과거분사형에 대한 설명으로 알맞은 것은?",
+        "choices": [
+          "불규칙하게 변하는 동사가 많아서, 과거형과 과거분사형이 같다고 단정할 수 없다.",
+          "모든 동사에서 과거형과 과거분사형은 철자가 같다.",
+          "과거분사형은 과거형에 -ed를 한 번 더 붙인 형태이다.",
+          "과거형은 불규칙 변화가 없고, 과거분사형만 불규칙하다.",
+          "be동사의 과거분사형은 was이다."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q7",
+        "lecture": 0,
+        "from": "15:59",
+        "to": "16:41",
+        "q": "다섯 가지 기본 형태 중 '불규칙 변화가 없는' 형태와 그 만드는 법을 바르게 짝지은 것은?",
+        "choices": [
+          "현재분사형 – 원형에 -ing를 붙인다",
+          "과거형 – 원형에 -ed를 붙인다",
+          "과거분사형 – 원형에 -en을 붙인다",
+          "현재형 – 원형에 -s를 붙인다",
+          "원형 – 현재형에서 -s를 뺀다"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "Q8",
+        "lecture": 0,
+        "from": "16:41",
+        "to": "19:47",
+        "q": "문장 속에서 앞뒤를 보지 않고 playing 하나만 보았을 때, 강사가 이것을 '현재분사형'이라는 형태 이름으로만 불러야 한다고 한 까닭은?",
+        "choices": [
+          "다섯 가지 형태는 그 자체로는 의미가 없고, 다른 말과 결합해야 비로소 분사·분사구문·동명사 같은 의미가 정해지기 때문이다.",
+          "-ing가 붙은 말은 언제나 진행형의 뜻으로만 쓰이기 때문이다.",
+          "-ing가 붙은 말은 언제나 동명사이기 때문이다.",
+          "'ing형'이라는 말이 정확하므로 그렇게 불러도 상관없기 때문이다.",
+          "현재분사형은 사전에 나와 있는 기본 형태이기 때문이다."
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  mindmap: {
+    "root": "동사의 기본 변형",
+    "side": [
+      {
+        "label": "개념",
+        "node": {
+          "text": "형태有, 의미無",
+          "blank": true
+        },
+        "hint": "의미는 응용 변형부터"
+      }
+    ],
+    "branches": [
+      {
+        "title": "원형 = R",
+        "hint": "Root",
+        "children": [
+          "동사의 기본형태",
+          {
+            "text": "사전에 나온 형태",
+            "blank": true
+          },
+          "be",
+          "play",
+          "get"
+        ]
+      },
+      {
+        "title": "현재형",
+        "children": [
+          "원형",
+          "혹은 주어 + s",
+          {
+            "text": "am, are, is",
+            "blank": true,
+            "hint": "특수한 경우"
+          },
+          "play, plays",
+          "get, gets"
+        ]
+      },
+      {
+        "title": "과거형",
+        "children": [
+          {
+            "text": "원형 + d, ed",
+            "blank": true
+          },
+          "불규칙 변화 多",
+          {
+            "text": "was, were",
+            "blank": true
+          },
+          "played",
+          {
+            "text": "got",
+            "blank": true
+          }
+        ]
+      },
+      {
+        "title": "과거 분사형",
+        "children": [
+          "과거형과 동일",
+          {
+            "text": "불규칙 변화 多",
+            "blank": true
+          },
+          {
+            "text": "been",
+            "blank": true
+          },
+          "played",
+          {
+            "text": "gotten",
+            "blank": true
+          }
+        ]
+      },
+      {
+        "title": "현재분사형",
+        "children": [
+          {
+            "text": "동사원형 + ing",
+            "blank": true
+          },
+          {
+            "text": "불규칙 변화 無",
+            "blank": true
+          },
+          {
+            "text": "being",
+            "blank": true
+          },
+          "playing",
+          "getting"
+        ]
+      }
+    ],
+    "distractors": [
+      "의미有, 형태無",
+      "원형 + ing",
+      "was, been",
+      "gotted",
+      "be + s"
+    ],
+    "pass": 1,
+    "review": "1강 「동사의 기본형태 5가지」"
+  },
+  reading: {
+    "intro": "지문을 읽고 물음에 답하세요. 다 쓰면 제출하세요. 채점은 선생님이 합니다.",
+    "passage": "Every morning, my grandfather walks to the small park near our house. He sits on the same bench and feeds the pigeons. \"The sun rises in the east, and a good day starts early,\" he always says. Water boils at 100°C, and at seven o'clock sharp he boils water for his tea. This Saturday, the park opens a new rose garden, so he plans to visit it with me.",
+    "questions": [
+      {
+        "prompt": "지문에서 현재시제로 쓰인 동사를 모두 찾아 쓰고, 각각의 원형을 함께 쓰시오."
+      },
+      {
+        "prompt": "'The sun rises in the east'와 'This Saturday, the park opens a new rose garden'의 현재시제는 각각 어떤 의미로 쓰였는지 설명하시오."
+      },
+      {
+        "prompt": "첫 두 문장을 우리말로 해석하시오."
+      }
+    ]
+  }
+};
+</script>
+<script src="lesson.js"></script>
+</body>
+</html>
