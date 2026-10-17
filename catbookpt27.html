@@ -3,311 +3,1421 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Unit 27 · 현재시제의 다양한 의미 | 천일문 기본</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="app"></div>
+<!-- 구글 시트 주소는 저장소의 config.js 에서 읽습니다 (없어도 페이지는 동작) -->
 <script src="config.js"></script>
 <script>
-/* ================================================================
-   Unit 27 내용
-   - lectures : 들을 강의 (수업 순서대로). optional: true 는 선택 강의
-   - quiz     : 객관식. 없으면 null
-       lecture = 위 강의 목록에서 몇 번째인지 (0부터 셈)
-       from/to = 틀렸을 때 다시 들을 구간, answer = 정답 선택지 번호 (0부터 셈)
-   - mindmap  : 마인드맵 빈칸. 없으면 null  (blank: true 인 칸이 빈칸)
-   - reading  : 독해·쓰기. 없으면 null
-   내용 넣는 방법은 catbookpt27.html 을 보고 그대로 따라 하면 됩니다.
-   ================================================================ */
+/* ===== Unit 27 내용 =====
+   lectures 순서대로: 강의 → 익히기(quiz) → 마인드맵(mindmaps) / 2-4는 안내(note)만 / 2-6 뒤에 문장 익히기(sentences)
+   quiz: from~to = 틀렸을 때 다시 들을 구간, answer = 정답 선택지 번호(0부터 셈) */
 window.UNIT = {
-  id: 27,
-  title: "현재시제의 다양한 의미",
-  chapter: "CHAPTER 05 동사의 시제",
-  lectures: [
+ "id": 27,
+ "title": "현재시제의 다양한 의미",
+ "chapter": "PART 2 서술어의 이해 · CHAPTER 05 동사의 시제",
+ "lectures": [
+  {
+   "no": "2-1",
+   "id": "Rr3Ly8nZHP4",
+   "title": "동사의 기본형태 5가지",
+   "book": "G3 32p",
+   "quiz": [
     {
-      "id": "Rr3Ly8nZHP4",
-      "title": "Part02 01 동사의 기본형태 5가지",
-      "book": "G3 32p"
+     "from": "1:10",
+     "to": "2:16",
+     "q": "강사가 '그가 개를 죽였다 / 죽일 것이다' 두 문장을 비교하며 말하려 한 것은?",
+     "choices": [
+      "주어를 보면 행동이 언제 일어났는지 알 수 있다.",
+      "목적어의 형태가 바뀌면서 시간이 표현된다.",
+      "행동의 시간은 '어제, 내일' 같은 부사로만 나타낼 수 있다.",
+      "행동이 언제 일어났는지는 오직 서술어(동사)를 보고 알 수 있다.",
+      "두 문장은 시간만 다를 뿐 뜻의 차이는 크지 않다."
+     ],
+     "answer": 3
     },
     {
-      "id": "wyD6hlG8y3k",
-      "title": "Part02 02 동사의 기본변형과 응용변형",
-      "book": "G3 33p"
+     "from": "2:24",
+     "to": "3:17",
+     "q": "강의에서 설명한 '법'의 뜻으로 알맞은 것은?",
+     "choices": [
+      "주어가 동작을 하는지 당하는지를 나타내는 것",
+      "문장이 명령인지 질문인지를 나타내는 것",
+      "동작이 일어난 때를 나타내는 것",
+      "주어가 하나인지 여럿인지를 나타내는 것",
+      "말하는 내용이 진심(사실)인지, 가짜(가정)로 하는 말인지를 나타내는 것"
+     ],
+     "answer": 4
     },
     {
-      "id": "yqSg3n9ggo4",
-      "title": "Part02 03 단순시제와 진행시제",
-      "book": "G3 34p"
+     "from": "5:07",
+     "to": "7:49",
+     "q": "우리말 동사 '연주하다'가 '연주한다, 연주하였다'로 바뀌는 방식에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "뜻을 담은 어간 '연주하-'는 그대로 두고, 문법적 성질을 담은 어미를 갈아 끼운다.",
+      "어간이 동사의 문법적 성질을, 어미가 동사의 뜻을 담당한다.",
+      "'연주하다'는 원형이라서 그대로 현재시제 문장에 쓸 수 있다.",
+      "어미 '-다'는 그대로 두고, 어간을 바꿔 끼운다.",
+      "어간과 어미를 모두 새로운 말로 바꾼다."
+     ],
+     "answer": 0
     },
     {
-      "id": "SmtogLPnD10",
-      "title": "Part02 04 Unit 27의 해석 상",
-      "book": "천일문 unit 27"
+     "from": "11:05",
+     "to": "12:35",
+     "q": "영어 동사의 '원형'에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "과거형에서 -ed를 뺀 형태를 말한다.",
+      "사전에 나와 있는 형태로, 영어로는 Root라고 부르며 다른 형태가 만들어지는 바탕이 된다.",
+      "동사에 -ing를 붙인 형태를 말한다.",
+      "주어가 3인칭 단수일 때 쓰는 형태이다.",
+      "사전에는 나오지 않고 문장 속에서만 볼 수 있는 형태이다."
+     ],
+     "answer": 1
     },
     {
-      "id": "SX1yxNCxTyY",
-      "title": "Part02 05 현재시제의 쓰임, 현재시제의 미래대용",
-      "book": "G3 35-36p"
+     "from": "12:52",
+     "to": "14:08",
+     "q": "현재형에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "be동사의 현재형은 be 그대로 쓴다.",
+      "대개 원형과 같지만, 주어가 3인칭 단수이고 시제가 현재이면 -s/-es를 붙인다.",
+      "언제나 원형에 -s를 붙여서 만든다.",
+      "원형과 완전히 다른 형태라서 따로 외워야 한다.",
+      "현재형은 원형에 -ing를 붙인 형태이다."
+     ],
+     "answer": 1
     },
     {
-      "id": "0mjSrc4I2rg",
-      "title": "Part02 06 Unit 27, 28 해석",
-      "book": "천일문 unit 27, 28"
+     "from": "14:21",
+     "to": "15:52",
+     "q": "과거형과 과거분사형에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "과거형은 불규칙 변화가 없고, 과거분사형만 불규칙하다.",
+      "모든 동사에서 과거형과 과거분사형은 철자가 같다.",
+      "불규칙하게 변하는 동사가 많아서, 과거형과 과거분사형이 같다고 단정할 수 없다.",
+      "과거분사형은 과거형에 -ed를 한 번 더 붙인 형태이다.",
+      "be동사의 과거분사형은 was이다."
+     ],
+     "answer": 2
+    },
+    {
+     "from": "15:59",
+     "to": "16:41",
+     "q": "다섯 가지 기본 형태 중 '불규칙 변화가 없는' 형태와 그 만드는 법을 바르게 짝지은 것은?",
+     "choices": [
+      "현재분사형 – 원형에 -ing를 붙인다",
+      "현재형 – 원형에 -s를 붙인다",
+      "과거형 – 원형에 -ed를 붙인다",
+      "과거분사형 – 원형에 -en을 붙인다",
+      "원형 – 현재형에서 -s를 뺀다"
+     ],
+     "answer": 0
+    },
+    {
+     "from": "16:41",
+     "to": "19:47",
+     "q": "문장 속에서 앞뒤를 보지 않고 playing 하나만 보았을 때, 강사가 이것을 '현재분사형'이라는 형태 이름으로만 불러야 한다고 한 까닭은?",
+     "choices": [
+      "-ing가 붙은 말은 언제나 동명사이기 때문이다.",
+      "-ing가 붙은 말은 언제나 진행형의 뜻으로만 쓰이기 때문이다.",
+      "다섯 가지 형태는 그 자체로는 의미가 없고, 다른 말과 결합해야 비로소 분사·분사구문·동명사 같은 의미가 정해지기 때문이다.",
+      "현재분사형은 사전에 나와 있는 기본 형태이기 때문이다.",
+      "'ing형'이라는 말이 정확하므로 그렇게 불러도 상관없기 때문이다."
+     ],
+     "answer": 2
     }
-  ],
-  quiz: {
-    "pass": 0.75,
-    "questions": [
+   ],
+   "mindmaps": [
+    {
+     "title": "동사의 기본 변형",
+     "root": "동사의 기본 변형",
+     "branches": [
       {
-        "id": "Q1",
-        "lecture": 0,
-        "from": "1:10",
-        "to": "2:16",
-        "q": "강사가 '그가 개를 죽였다 / 죽일 것이다' 두 문장을 비교하며 말하려 한 것은?",
-        "choices": [
-          "행동이 언제 일어났는지는 오직 서술어(동사)를 보고 알 수 있다.",
-          "주어를 보면 행동이 언제 일어났는지 알 수 있다.",
-          "목적어의 형태가 바뀌면서 시간이 표현된다.",
-          "두 문장은 시간만 다를 뿐 뜻의 차이는 크지 않다.",
-          "행동의 시간은 '어제, 내일' 같은 부사로만 나타낼 수 있다."
-        ],
-        "answer": 0
+       "t": "개념",
+       "c": [
+        {
+         "t": "형태有, 의미無",
+         "b": true,
+         "h": "의미는 응용 변형부터"
+        }
+       ]
       },
       {
-        "id": "Q2",
-        "lecture": 0,
-        "from": "2:24",
-        "to": "3:17",
-        "q": "강의에서 설명한 '법'의 뜻으로 알맞은 것은?",
-        "choices": [
-          "말하는 내용이 진심(사실)인지, 가짜(가정)로 하는 말인지를 나타내는 것",
-          "주어가 동작을 하는지 당하는지를 나타내는 것",
-          "동작이 일어난 때를 나타내는 것",
-          "주어가 하나인지 여럿인지를 나타내는 것",
-          "문장이 명령인지 질문인지를 나타내는 것"
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q3",
-        "lecture": 0,
-        "from": "5:07",
-        "to": "7:49",
-        "q": "우리말 동사 '연주하다'가 '연주한다, 연주하였다'로 바뀌는 방식에 대한 설명으로 알맞은 것은?",
-        "choices": [
-          "뜻을 담은 어간 '연주하-'는 그대로 두고, 문법적 성질을 담은 어미를 갈아 끼운다.",
-          "어미 '-다'는 그대로 두고, 어간을 바꿔 끼운다.",
-          "어간과 어미를 모두 새로운 말로 바꾼다.",
-          "'연주하다'는 원형이라서 그대로 현재시제 문장에 쓸 수 있다.",
-          "어간이 동사의 문법적 성질을, 어미가 동사의 뜻을 담당한다."
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q4",
-        "lecture": 0,
-        "from": "11:05",
-        "to": "12:35",
-        "q": "영어 동사의 '원형'에 대한 설명으로 알맞은 것은?",
-        "choices": [
-          "사전에 나와 있는 형태로, 영어로는 Root라고 부르며 다른 형태가 만들어지는 바탕이 된다.",
-          "주어가 3인칭 단수일 때 쓰는 형태이다.",
-          "과거형에서 -ed를 뺀 형태를 말한다.",
-          "동사에 -ing를 붙인 형태를 말한다.",
-          "사전에는 나오지 않고 문장 속에서만 볼 수 있는 형태이다."
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q5",
-        "lecture": 0,
-        "from": "12:52",
-        "to": "14:08",
-        "q": "현재형에 대한 설명으로 알맞은 것은?",
-        "choices": [
-          "대개 원형과 같지만, 주어가 3인칭 단수이고 시제가 현재이면 -s/-es를 붙인다.",
-          "언제나 원형에 -s를 붙여서 만든다.",
-          "원형과 완전히 다른 형태라서 따로 외워야 한다.",
-          "be동사의 현재형은 be 그대로 쓴다.",
-          "현재형은 원형에 -ing를 붙인 형태이다."
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q6",
-        "lecture": 0,
-        "from": "14:21",
-        "to": "15:52",
-        "q": "과거형과 과거분사형에 대한 설명으로 알맞은 것은?",
-        "choices": [
-          "불규칙하게 변하는 동사가 많아서, 과거형과 과거분사형이 같다고 단정할 수 없다.",
-          "모든 동사에서 과거형과 과거분사형은 철자가 같다.",
-          "과거분사형은 과거형에 -ed를 한 번 더 붙인 형태이다.",
-          "과거형은 불규칙 변화가 없고, 과거분사형만 불규칙하다.",
-          "be동사의 과거분사형은 was이다."
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q7",
-        "lecture": 0,
-        "from": "15:59",
-        "to": "16:41",
-        "q": "다섯 가지 기본 형태 중 '불규칙 변화가 없는' 형태와 그 만드는 법을 바르게 짝지은 것은?",
-        "choices": [
-          "현재분사형 – 원형에 -ing를 붙인다",
-          "과거형 – 원형에 -ed를 붙인다",
-          "과거분사형 – 원형에 -en을 붙인다",
-          "현재형 – 원형에 -s를 붙인다",
-          "원형 – 현재형에서 -s를 뺀다"
-        ],
-        "answer": 0
-      },
-      {
-        "id": "Q8",
-        "lecture": 0,
-        "from": "16:41",
-        "to": "19:47",
-        "q": "문장 속에서 앞뒤를 보지 않고 playing 하나만 보았을 때, 강사가 이것을 '현재분사형'이라는 형태 이름으로만 불러야 한다고 한 까닭은?",
-        "choices": [
-          "다섯 가지 형태는 그 자체로는 의미가 없고, 다른 말과 결합해야 비로소 분사·분사구문·동명사 같은 의미가 정해지기 때문이다.",
-          "-ing가 붙은 말은 언제나 진행형의 뜻으로만 쓰이기 때문이다.",
-          "-ing가 붙은 말은 언제나 동명사이기 때문이다.",
-          "'ing형'이라는 말이 정확하므로 그렇게 불러도 상관없기 때문이다.",
-          "현재분사형은 사전에 나와 있는 기본 형태이기 때문이다."
-        ],
-        "answer": 0
-      }
-    ]
-  },
-  mindmap: {
-    "root": "동사의 기본 변형",
-    "side": [
-      {
-        "label": "개념",
-        "node": {
-          "text": "형태有, 의미無",
-          "blank": true
+       "t": "원형 = R",
+       "h": "Root",
+       "c": [
+        {
+         "t": "동사의 기본형태"
         },
-        "hint": "의미는 응용 변형부터"
+        {
+         "t": "사전에 나온 형태",
+         "b": true
+        },
+        {
+         "t": "be"
+        },
+        {
+         "t": "play"
+        },
+        {
+         "t": "get"
+        }
+       ]
+      },
+      {
+       "t": "현재형",
+       "c": [
+        {
+         "t": "원형"
+        },
+        {
+         "t": "혹은 주어 + s"
+        },
+        {
+         "t": "am, are, is",
+         "b": true,
+         "h": "특수한 경우"
+        },
+        {
+         "t": "play, plays"
+        },
+        {
+         "t": "get, gets"
+        }
+       ]
+      },
+      {
+       "t": "과거형",
+       "c": [
+        {
+         "t": "원형 + d, ed",
+         "b": true
+        },
+        {
+         "t": "불규칙 변화 多"
+        },
+        {
+         "t": "was, were",
+         "b": true
+        },
+        {
+         "t": "played"
+        },
+        {
+         "t": "got",
+         "b": true
+        }
+       ]
+      },
+      {
+       "t": "과거 분사형",
+       "c": [
+        {
+         "t": "과거형과 동일"
+        },
+        {
+         "t": "불규칙 변화 多",
+         "b": true
+        },
+        {
+         "t": "been",
+         "b": true
+        },
+        {
+         "t": "played"
+        },
+        {
+         "t": "gotten",
+         "b": true
+        }
+       ]
+      },
+      {
+       "t": "현재분사형",
+       "c": [
+        {
+         "t": "동사원형 + ing",
+         "b": true
+        },
+        {
+         "t": "불규칙 변화 無",
+         "b": true
+        },
+        {
+         "t": "being",
+         "b": true
+        },
+        {
+         "t": "playing"
+        },
+        {
+         "t": "getting"
+        }
+       ]
       }
-    ],
-    "branches": [
-      {
-        "title": "원형 = R",
-        "hint": "Root",
-        "children": [
-          "동사의 기본형태",
-          {
-            "text": "사전에 나온 형태",
-            "blank": true
-          },
-          "be",
-          "play",
-          "get"
-        ]
-      },
-      {
-        "title": "현재형",
-        "children": [
-          "원형",
-          "혹은 주어 + s",
-          {
-            "text": "am, are, is",
-            "blank": true,
-            "hint": "특수한 경우"
-          },
-          "play, plays",
-          "get, gets"
-        ]
-      },
-      {
-        "title": "과거형",
-        "children": [
-          {
-            "text": "원형 + d, ed",
-            "blank": true
-          },
-          "불규칙 변화 多",
-          {
-            "text": "was, were",
-            "blank": true
-          },
-          "played",
-          {
-            "text": "got",
-            "blank": true
-          }
-        ]
-      },
-      {
-        "title": "과거 분사형",
-        "children": [
-          "과거형과 동일",
-          {
-            "text": "불규칙 변화 多",
-            "blank": true
-          },
-          {
-            "text": "been",
-            "blank": true
-          },
-          "played",
-          {
-            "text": "gotten",
-            "blank": true
-          }
-        ]
-      },
-      {
-        "title": "현재분사형",
-        "children": [
-          {
-            "text": "동사원형 + ing",
-            "blank": true
-          },
-          {
-            "text": "불규칙 변화 無",
-            "blank": true
-          },
-          {
-            "text": "being",
-            "blank": true
-          },
-          "playing",
-          "getting"
-        ]
-      }
-    ],
-    "distractors": [
+     ],
+     "distractors": [
       "의미有, 형태無",
       "원형 + ing",
       "was, been",
       "gotted",
       "be + s"
-    ],
-    "pass": 1,
-    "review": "1강 「동사의 기본형태 5가지」"
+     ]
+    }
+   ]
   },
-  reading: {
-    "intro": "지문을 읽고 물음에 답하세요. 다 쓰면 제출하세요. 채점은 선생님이 합니다.",
-    "passage": "Every morning, my grandfather walks to the small park near our house. He sits on the same bench and feeds the pigeons. \"The sun rises in the east, and a good day starts early,\" he always says. Water boils at 100°C, and at seven o'clock sharp he boils water for his tea. This Saturday, the park opens a new rose garden, so he plans to visit it with me.",
-    "questions": [
+  {
+   "no": "2-2",
+   "id": "wyD6hlG8y3k",
+   "title": "동사의 기본변형과 응용변형",
+   "book": "G3 33p",
+   "quiz": [
+    {
+     "from": "0:32",
+     "to": "1:20",
+     "q": "강의에서 말한 '응용 변형'의 뜻으로 알맞은 것은?",
+     "choices": [
+      "의미 없이 형태만 있는 다섯 가지 동사 모양",
+      "사전에 나와 있는 동사의 기본 형태",
+      "의미를 표현하기 위해 기본 변형을 조합한 것",
+      "동사에 -s나 -ed를 붙이는 규칙",
+      "불규칙하게 변하는 동사의 형태"
+     ],
+     "answer": 2
+    },
+    {
+     "from": "2:15",
+     "to": "3:28",
+     "q": "'~하고 있는 중이다'라는 뜻을 만드는 규칙으로 강의에서 설명한 것은?",
+     "choices": [
+      "동사 현재형 + 동사의 현재분사형",
+      "have동사 현재형 + 동사의 과거분사형",
+      "be동사 과거형 + 동사의 과거분사형",
+      "be동사 현재형 + 동사의 현재분사형",
+      "be동사 원형 + 동사원형"
+     ],
+     "answer": 3
+    },
+    {
+     "from": "3:37",
+     "to": "4:49",
+     "q": "다음 중 응용 변형에 속하지 않는 것은?",
+     "choices": [
+      "현재분사형",
+      "조동사가 쓰인 표현",
+      "시제",
+      "be동사 현재형 + 현재분사형 (진행형)",
+      "태"
+     ],
+     "answer": 0
+    },
+    {
+     "from": "4:59",
+     "to": "5:33",
+     "q": "강의에서 말한 공부 방법으로 알맞은 것은?",
+     "choices": [
+      "마인드맵은 둘 다 외우지 않아도 된다.",
+      "기본 변형과 그 마인드맵은 반드시 외우고, 응용 변형은 개념만 이해해 두면 된다.",
+      "기본 변형과 응용 변형을 모두 외워야 한다.",
+      "기본 변형은 외울 필요가 없고 응용 변형만 외운다.",
+      "응용 변형을 먼저 외운 뒤 기본 변형을 공부한다."
+     ],
+     "answer": 1
+    }
+   ],
+   "mindmaps": [
+    {
+     "title": "동사의 응용 변형",
+     "root": "동사의 응용 변형",
+     "branches": [
       {
-        "prompt": "지문에서 현재시제로 쓰인 동사를 모두 찾아 쓰고, 각각의 원형을 함께 쓰시오."
+       "t": "종류",
+       "c": [
+        {
+         "t": "시제"
+        },
+        {
+         "t": "태"
+        },
+        {
+         "t": "조동사",
+         "b": true
+        },
+        {
+         "t": "준동사",
+         "b": true
+        }
+       ]
       },
       {
-        "prompt": "'The sun rises in the east'와 'This Saturday, the park opens a new rose garden'의 현재시제는 각각 어떤 의미로 쓰였는지 설명하시오."
+       "t": "개념",
+       "c": [
+        {
+         "t": "의미를 표현하기 위해",
+         "b": true,
+         "h": "의미"
+        },
+        {
+         "t": "기본 변형을 조합한다.",
+         "b": true,
+         "h": "조합"
+        },
+        {
+         "t": "과거 진행시제",
+         "h": "예",
+         "c": [
+          {
+           "t": "의미 : ~하는 중이었다."
+          },
+          {
+           "t": "형태 : be동사의 과거형 + 현재분사형",
+           "b": true
+          }
+         ]
+        },
+        {
+         "t": "동명사",
+         "h": "예",
+         "c": [
+          {
+           "t": "의미 : ~하는 것",
+           "b": true
+          },
+          {
+           "t": "형태 : 현재 분사형",
+           "b": true
+          }
+         ]
+        }
+       ]
       },
       {
-        "prompt": "첫 두 문장을 우리말로 해석하시오."
+       "t": "예",
+       "c": [
+        {
+         "t": "잭은 영어를 공부하는 중이었다.",
+         "h": "표현하고 싶은 의미"
+        },
+        {
+         "t": "공부하다 = study"
+        },
+        {
+         "t": "공부하는 중이었다. = ?"
+        },
+        {
+         "t": "과거 진행시제",
+         "h": "맞춤한 응용변형 찾음"
+        },
+        {
+         "t": "study ⇒ was studying",
+         "b": true,
+         "h": "이렇게!"
+        },
+        {
+         "t": "Jack was studying English."
+        }
+       ]
       }
+     ],
+     "distractors": [
+      "형태 : be동사의 현재형 + 과거분사형",
+      "의미 : ~하는 중이다.",
+      "study ⇒ is studying",
+      "형태 : 과거 분사형",
+      "기본 변형을 외운다."
+     ]
+    }
+   ]
+  },
+  {
+   "no": "2-3",
+   "id": "yqSg3n9ggo4",
+   "title": "단순시제와 진행시제",
+   "book": "G3 34p",
+   "quiz": [
+    {
+     "from": "0:55",
+     "to": "1:34",
+     "q": "'시간선 위 현재 지점에서 일어나면 현재시제를 쓴다'는 생각에 대한 강사의 설명은?",
+     "choices": [
+      "아주 틀린 건 아니지만, 실제로 시제를 쓰는 일은 그보다 복잡하다.",
+      "영어에만 맞고 우리말에는 틀리다.",
+      "과거·미래에만 맞고 현재에는 틀리다.",
+      "완전히 틀린 생각이다.",
+      "정확한 설명이므로 그대로 외우면 된다."
+     ],
+     "answer": 0
+    },
+    {
+     "from": "2:43",
+     "to": "3:57",
+     "q": "현재라는 시간이 '특수하다'고 한 이유는?",
+     "choices": [
+      "현재시제는 형태가 하나뿐이기 때문에",
+      "현재는 과거와 미래보다 길기 때문에",
+      "현재에는 동작이 일어나지 않기 때문에",
+      "현재는 언제나 진행형으로만 말하기 때문에",
+      "말하는 순간 과거가 되어 버려서, 현재에 한 번 일어난 사건을 그대로 말할 수 없기 때문에"
+     ],
+     "answer": 4
+    },
+    {
+     "from": "3:42",
+     "to": "4:28",
+     "q": "강의에 따르면 현재에 일어나는 동작은 어떤 두 가지로 나뉘나?",
+     "choices": [
+      "규칙적·반복적으로 일어나는 것 / 지금 이 순간 일어나고 있는 것",
+      "한 번 일어난 것 / 여러 번 일어난 것",
+      "주어가 하는 것 / 주어가 당하는 것",
+      "오늘 일어난 것 / 어제 일어난 것",
+      "진심인 것 / 가정인 것"
+     ],
+     "answer": 0
+    },
+    {
+     "from": "4:28",
+     "to": "6:56",
+     "q": "영어 선생님과 영어 공부 중인 철수에게 '수학 공부하니?'와 '수학 공부하고 있니?'라고 물었다. 대답이 각각 '예'와 '아니오'로 다른 까닭은?",
+     "choices": [
+      "철수가 거짓말을 했기 때문에",
+      "현재시제는 지금 이 순간을, 진행시제는 습관을 묻기 때문에",
+      "현재시제는 지금을 중심으로 약간 과거~약간 미래의 반복을 묻고, 진행시제는 바로 지금 이 순간을 묻기 때문에",
+      "질문한 사람이 달랐기 때문에",
+      "두 질문의 시제가 같기 때문에"
+     ],
+     "answer": 2
+    },
+    {
+     "from": "7:10",
+     "to": "8:46",
+     "q": "단순시제를 시간선 위에 그린 모양과 핵심 낱말을 바르게 짝지은 것은?",
+     "choices": [
+      "동그란 구름 – 바로 그 순간",
+      "동그란 구름 – 규칙적, 반복적",
+      "한 개의 점 – 한 번 일어남",
+      "긴 화살표 – 계속됨",
+      "날카로운 선 – 규칙적, 반복적"
+     ],
+     "answer": 1
+    },
+    {
+     "from": "8:55",
+     "to": "10:34",
+     "q": "진행시제에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "시간선 그림은 동그란 구름이다.",
+      "과거에서 현재까지 계속된 동작을 뜻한다.",
+      "앞과 뒤로 계속 이어지는 동작을 뜻한다.",
+      "기준 시점 바로 그 순간에 진행 중인 동작이고, 앞뒤에 무엇을 했는지는 상관없으며 '~하는 중이다'로 해석한다.",
+      "규칙적·반복적인 동작을 뜻하며 '~한다'로 해석한다."
+     ],
+     "answer": 3
+    }
+   ],
+   "mindmaps": [
+    {
+     "title": "단순시제와 진행시제",
+     "root": "단순시제와 진행 시제",
+     "branches": [
+      {
+       "t": "진행시제",
+       "h": "바로 그순간",
+       "c": [
+        {
+         "t": "어떠한 서술어가 진행시제로 쓰인다면 이 동작은 기준 시점의 순간에 진행중인 것이다.",
+         "b": true
+        },
+        {
+         "t": "좀 전에 뭘 했는지 앞으로 뭘 할지 상관 읎어",
+         "b": true
+        },
+        {
+         "t": "시간선 그림은 날카로운 선",
+         "b": true
+        }
+       ]
+      },
+      {
+       "t": "개념",
+       "c": [
+        {
+         "t": "어떠한 의미를 표현하는가?"
+        }
+       ]
+      },
+      {
+       "t": "단순시제",
+       "h": "규칙적 반복적",
+       "c": [
+        {
+         "t": "어떠한 서술어가 단순시제로 쓰인다면 기준 시점을 중심으로 과거와 미래에 규칙적이고 반복적으로 동작한 것이다.",
+         "b": true
+        },
+        {
+         "t": "지금이 순간은 상관 읎어",
+         "b": true
+        },
+        {
+         "t": "시간선 그림은 동그란 구름",
+         "b": true
+        }
+       ]
+      }
+     ],
+     "distractors": [
+      "시간선 그림은 한 개의 점",
+      "앞과 뒤가 이어져야 해"
+     ]
+    }
+   ]
+  },
+  {
+   "no": "2-4",
+   "id": "SmtogLPnD10",
+   "title": "Unit 27의 해석 상",
+   "book": "천일문 unit 27",
+   "note": "2-4에서 해석한 문장은 2-6 강의 뒤의 문장 익히기에서 함께 합니다. 강의를 다 들으면 바로 다음 강의로 넘어가세요."
+  },
+  {
+   "no": "2-5",
+   "id": "SX1yxNCxTyY",
+   "title": "현재시제의 쓰임, 현재시제의 미래대용",
+   "book": "G3 35-36p",
+   "quiz": [
+    {
+     "from": "0:00",
+     "to": "1:43",
+     "q": "강의에서 말한 현재시제의 쓰임이 아닌 것은?",
+     "choices": [
+      "과거에 한 번 일어나고 끝난 사건",
+      "확실히 정해진 미래의 사건",
+      "습관적·반복적인 행동",
+      "현재의 상태",
+      "불변의 진리·속담·자연현상 같은 일반적 사실"
+     ],
+     "answer": 0
+    },
+    {
+     "from": "0:34",
+     "to": "1:13",
+     "q": "불변의 진리를 현재시제로 쓰는 이유는?",
+     "choices": [
+      "진리는 현재에만 맞기 때문에",
+      "미래에는 바뀔 수 있기 때문에",
+      "과거시제를 쓰면 문법 오류이기 때문에",
+      "진리는 지금 이 순간 진행 중이기 때문에",
+      "사건에 시간성이 없어 어떤 시제를 써도 상관없으므로, 대표로 현재시제를 쓴다."
+     ],
+     "answer": 4
+    },
+    {
+     "from": "4:40",
+     "to": "5:18",
+     "q": "'왕래발착 동사'의 뜻으로 알맞은 것은?",
+     "choices": [
+      "목적어가 두 개 필요한 동사",
+      "감정을 나타내는 동사",
+      "가다·오다·출발하다·도착하다(시작하다·끝나다)의 뜻을 가진 동사",
+      "상태를 나타내는 동사",
+      "불규칙하게 변하는 동사"
+     ],
+     "answer": 2
+    },
+    {
+     "from": "11:23",
+     "to": "12:45",
+     "q": "강사가 기차 시간표(타임테이블) 이야기를 하며 강조한 핵심은?",
+     "choices": [
+      "왕래발착이라는 말 자체에 깊은 뜻이 있다.",
+      "시간표가 없으면 현재시제를 쓸 수 없다.",
+      "시간표에는 언제나 미래시제를 쓴다.",
+      "동사 종류보다, 시간이 확실히 정해져 불확실성이 적은 사건이라는 점이 중요하다.",
+      "왕래발착 동사는 기차에 대해서만 쓴다."
+     ],
+     "answer": 3
+    },
+    {
+     "from": "15:01",
+     "to": "16:19",
+     "q": "'왕래발착 동사는 확실한 예정을 서술할 때 현재시제가 미래시제를 대신할 수 있다'에서 '대신할 수 있다'의 뜻은?",
+     "choices": [
+      "현재시제로 써도 되고 미래시제로 써도 된다.",
+      "반드시 미래시제로 써야 한다.",
+      "반드시 현재시제로 써야 한다.",
+      "과거시제로 바꿔 써야 한다.",
+      "진행시제로만 쓸 수 있다."
+     ],
+     "answer": 0
+    },
+    {
+     "from": "21:54",
+     "to": "24:30",
+     "q": "강사가 알려준, 법칙을 외우는 방법은?",
+     "choices": [
+      "문장을 최대한 줄여서 외운다.",
+      "법칙을 하나의 완결된 문장으로 통째로 외우고, 토막마다 뜻을 하나하나 이해한다.",
+      "영어 예문만 외우고 법칙은 외우지 않는다.",
+      "외우지 않고 문제만 많이 푼다.",
+      "핵심 낱말만 뽑아서 짧게 외운다."
+     ],
+     "answer": 1
+    },
+    {
+     "from": "25:56",
+     "to": "26:11",
+     "q": "'시간과 조건의 부사절에서 현재시제는 미래시제를 대신한다'에 대한 설명으로 알맞은 것은?",
+     "choices": [
+      "명사절에서만 대신한다.",
+      "왕래발착 동사일 때만 대신한다.",
+      "반드시 대신해야 하며, 대신하지 않으면 틀린 문장이 된다.",
+      "대신해도 되고 안 해도 된다.",
+      "미래시제를 쓰는 것이 더 자연스럽다."
+     ],
+     "answer": 2
+    },
+    {
+     "from": "26:11",
+     "to": "26:50",
+     "q": "시간·조건의 부사절인지 알아보는 기준은?",
+     "choices": [
+      "문장 끝의 부사",
+      "절을 이끄는 접속사 (when, if, before, after, once 등)",
+      "주어가 3인칭 단수인지",
+      "시제가 미래인지",
+      "동사가 왕래발착 동사인지"
+     ],
+     "answer": 1
+    },
+    {
+     "from": "27:37",
+     "to": "27:44",
+     "q": "'be about to + 동사원형'의 뜻은?",
+     "choices": [
+      "~할 예정이다",
+      "~하는 중이다",
+      "~할 수 있다",
+      "막 ~하려던 참이다",
+      "~했었다"
+     ],
+     "answer": 3
+    }
+   ],
+   "mindmaps": [
+    {
+     "title": "현재시제의 쓰임",
+     "root": "현재시제의 쓰임",
+     "branches": [
+      {
+       "t": "현재의 습관적이고 반복적 행동"
+      },
+      {
+       "t": "현재의 상태",
+       "b": true
+      },
+      {
+       "t": "일반적 사실",
+       "c": [
+        {
+         "t": "불변의 진리",
+         "b": true
+        },
+        {
+         "t": "속담 / 격언",
+         "b": true
+        },
+        {
+         "t": "자연 현상",
+         "b": true
+        }
+       ]
+      },
+      {
+       "t": "미래의 사건",
+       "b": true,
+       "h": "현재 시제의 미래 대용"
+      }
+     ],
+     "distractors": [
+      "과거의 사건",
+      "지금 이 순간 진행 중인 동작"
+     ]
+    },
+    {
+     "title": "현재 시제의 미래대용",
+     "root": "현재 시제의 미래대용",
+     "branches": [
+      {
+       "t": "개념",
+       "c": [
+        {
+         "t": "미래의 사건을 서술하며",
+         "b": true,
+         "h": "아직 일어나지 않음"
+        },
+        {
+         "t": "현재 (단순, 진행, 완료) 시제를 사용하는 경우"
+        }
+       ]
+      },
+      {
+       "t": "왕래 발착",
+       "c": [
+        {
+         "t": "왕래 발착 동사들",
+         "c": [
+          {
+           "t": "갈왕(往)",
+           "c": [
+            {
+             "t": "go, leave for…",
+             "b": true
+            }
+           ]
+          },
+          {
+           "t": "올래(來)",
+           "c": [
+            {
+             "t": "come…",
+             "b": true
+            }
+           ]
+          },
+          {
+           "t": "필발(發)",
+           "h": "피다. 쏘다. 일어나다.",
+           "c": [
+            {
+             "t": "start, begin…",
+             "b": true
+            }
+           ]
+          },
+          {
+           "t": "붙을 착(着)",
+           "c": [
+            {
+             "t": "arrive, get",
+             "b": true
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "주문",
+         "c": [
+          {
+           "t": "왕/래/발/착의 동사는"
+          },
+          {
+           "t": "확실한 예정을 서술할 때",
+           "b": true,
+           "c": [
+            {
+             "t": "Time table 존재",
+             "b": true
+            }
+           ]
+          },
+          {
+           "t": "현재시제가 미래시제를"
+          },
+          {
+           "t": "대신할 수 있다",
+           "b": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "시조부",
+       "c": [
+        {
+         "t": "주문",
+         "c": [
+          {
+           "t": "시간과 조건의"
+          },
+          {
+           "t": "부사절에서"
+          },
+          {
+           "t": "현재시제는 미래시제를 대신한다",
+           "b": true
+          }
+         ]
+        },
+        {
+         "t": "시간절 접속사",
+         "c": [
+          {
+           "t": "before, until, after, as, once…"
+          },
+          {
+           "t": "When",
+           "h": "명사절 가능 주의"
+          }
+         ]
+        },
+        {
+         "t": "조건절 접속사",
+         "c": [
+          {
+           "t": "if",
+           "h": "명사절 가능 주의"
+          },
+          {
+           "t": "until, once"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "어구들",
+       "c": [
+        {
+         "t": "be동사 현재형 + going to"
+        },
+        {
+         "t": "현재진행시제 + 미래부사"
+        },
+        {
+         "t": "be about to + R",
+         "b": true,
+         "h": "막~ 하려던 참이다"
+        },
+        {
+         "t": "be 동사 + 부정사 + 미래부사",
+         "b": true,
+         "h": "be to 용법 예정"
+        }
+       ]
+      }
+     ],
+     "distractors": [
+      "대신해야 한다",
+      "과거의 사건을 서술하며",
+      "be going to + 과거분사",
+      "Time table 없음"
+     ]
+    }
+   ]
+  },
+  {
+   "no": "2-6",
+   "id": "0mjSrc4I2rg",
+   "title": "Unit 27, 28 해석",
+   "book": "천일문 unit 27, 28",
+   "sentences": {
+    "title": "문장 익히기 (2-4, 2-6 해석 문장)",
+    "intro": "2-4와 2-6에서 해석한 문장들이에요. 강의에서 배운 대로 끊어 읽으며 해석을 쓰세요. 다 쓰면 제출하세요. 채점은 선생님이 합니다.",
+    "items": [
+     {
+      "no": 284,
+      "en": "We live in an age of constant interaction."
+     },
+     {
+      "no": 285,
+      "en": "He goes hiking every Saturday."
+     },
+     {
+      "no": 286,
+      "en": "Most planets rotate in an anticlockwise direction."
+     },
+     {
+      "no": 287,
+      "en": "Vegetarians stay away from meat, including chicken and fish."
+     },
+     {
+      "no": 288,
+      "en": "The new subway line opens next month."
+     },
+     {
+      "no": 289,
+      "en": "When you do common things in an uncommon way, you will get the attention of the world."
+     },
+     {
+      "no": 290,
+      "en": "If you don’t go through hardships, you won’t know how strong you are."
+     },
+     {
+      "no": 291,
+      "en": "As soon as you start to pursue a dream, everything in your life will have meaning."
+     },
+     {
+      "no": 292,
+      "en": "Respect yourself and others will respect you."
+     },
+     {
+      "no": 293,
+      "en": "The successful man will profit from his mistakes and try again in a different way."
+     },
+     {
+      "no": 294,
+      "en": "This week I’m going to concentrate on schoolwork that I need to catch up on."
+     },
+     {
+      "no": 295,
+      "en": "We are moving to a new place tomorrow."
+     },
+     {
+      "no": 296,
+      "en": "A lot of people give up just before they’re about to achieve success."
+     },
+     {
+      "no": 297,
+      "en": "She was on the point of leaving when he finally arrived."
+     },
+     {
+      "no": 298,
+      "en": "The plane for Toronto is to take off within 30 minutes."
+     },
+     {
+      "no": 299,
+      "en": "The project is due to start on Monday and the duration will be three weeks."
+     }
     ]
+   }
   }
+ ]
 };
 </script>
-<script src="lesson.js"></script>
+<script>
+(function () {
+  'use strict';
+  const U = window.UNIT;
+  const CFG = window.LESSON_CONFIG || {};
+  const DONE_RATIO = 0.9;
+  const pad = n => String(n).padStart(2, '0');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+  const toSec = s => String(s).split(':').map(Number).reduce((a, b) => a * 60 + b, 0);
+  const fmt = sec => { sec = Math.max(0, Math.round(sec)); const m = Math.floor(sec / 60), s = sec % 60; return m + ':' + pad(s); };
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const NUM = '①②③④⑤⑥⑦⑧';
+
+  /* ---------------- 저장 ---------------- */
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
+  };
+  const KEY = 'cb_u' + pad(U.id) + '_v2';
+  const S = Object.assign({ quiz: {}, mm: {}, sent: {} }, store.get(KEY, {}));
+  const VID = {};
+  const vstate = id => VID[id] || (VID[id] = Object.assign({ ranges: '', dur: 0, pos: 0, done: false, seeks: 0, maxRate: 1, hidden: 0 }, store.get('cb_v_' + id, {})));
+  const save = () => { store.set(KEY, S); Object.keys(VID).forEach(k => store.set('cb_v_' + k, VID[k])); };
+  let student = store.get('cb_student', '');
+
+  /* ---------------- 시트 기록 ---------------- */
+  const QKEY = 'cb_queue';
+  function log(event, data) {
+    const row = Object.assign({ clientTime: new Date().toISOString(), student, unit: 'Unit ' + pad(U.id), unitTitle: U.title, event }, data || {});
+    if (!CFG.endpoint) { console.log('[기록 — 시트 주소 미설정]', row); return; }
+    const q = store.get(QKEY, []); q.push(row); store.set(QKEY, q); flush();
+  }
+  let flushing = false;
+  async function flush() {
+    if (flushing || !CFG.endpoint) return; flushing = true;
+    try {
+      let q = store.get(QKEY, []);
+      while (q.length) {
+        await fetch(CFG.endpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(q[0]) });
+        q = store.get(QKEY, []); q.shift(); store.set(QKEY, q);
+      }
+    } catch (e) { }
+    flushing = false;
+  }
+  window.addEventListener('online', flush);
+
+  /* ---------------- 시청 구간 ---------------- */
+  const enc = set => { const a = [...set].sort((x, y) => x - y), o = []; let s = null, p = null; for (const v of a) { if (s === null) s = p = v; else if (v === p + 1) p = v; else { o.push(s === p ? s : s + '-' + p); s = p = v; } } if (s !== null) o.push(s === p ? s : s + '-' + p); return o.join(','); };
+  const dec = str => { const set = new Set(); if (!str) return set; String(str).split(',').forEach(r => { const [a, b] = r.split('-').map(Number); for (let i = a; i <= (isNaN(b) ? a : b); i++) set.add(i); }); return set; };
+
+  /* ---------------- 유튜브 ---------------- */
+  let ytP = null;
+  function loadYT() {
+    if (ytP) return ytP;
+    ytP = new Promise((res, rej) => {
+      if (location.protocol === 'file:') return rej(new Error('file'));
+      if (window.YT && window.YT.Player) return res(window.YT);
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => { prev && prev(); res(window.YT); };
+      const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api';
+      s.onerror = () => rej(new Error('net')); document.head.appendChild(s);
+      setTimeout(() => { if (!(window.YT && window.YT.Player)) rej(new Error('net')); }, 15000);
+    });
+    return ytP;
+  }
+  const ytErrMsg = e => e && e.message === 'file'
+    ? '내 컴퓨터에서 파일을 직접 열면 유튜브가 재생을 막아요(오류 153). 깃허브 페이지 주소로 열어 주세요.'
+    : '유튜브 강의를 불러오지 못했어요. 인터넷 연결을 확인하고 새로고침해 주세요.';
+  const players = [];
+  function stopPlayers() { players.splice(0).forEach(p => { clearInterval(p.timer); try { p.player && p.player.destroy(); } catch (e) { } }); }
+  function makePlayer(elId, videoId, onTick) {
+    const api = {};
+    api.ready = loadYT().then(YT => new Promise(res => {
+      api.player = new YT.Player(elId, {
+        width: '100%', height: '100%', videoId,
+        playerVars: Object.assign({ rel: 0, modestbranding: 1, playsinline: 1 }, /^https?:$/.test(location.protocol) ? { origin: location.origin } : {}),
+        events: { onReady: () => res(api.player) }
+      });
+    }));
+    let lastT = null, lastW = null;
+    api.reset = () => { lastT = null; lastW = null; };
+    api.ready.then(() => {
+      api.timer = setInterval(() => {
+        const p = api.player; if (!p || !p.getPlayerState) return;
+        const playing = p.getPlayerState() === 1, t = p.getCurrentTime() || 0, rate = p.getPlaybackRate ? p.getPlaybackRate() : 1, now = performance.now();
+        let jumped = 0;
+        if (lastT !== null && playing) { const exp = lastT + (now - lastW) / 1000 * rate; if (Math.abs(t - exp) > 3) jumped = t - exp; }
+        const dt = lastW ? (now - lastW) / 1000 : 0; lastT = t; lastW = now;
+        onTick({ t, playing, rate, jumped, hidden: document.hidden, dt, p });
+      }, 500);
+    });
+    players.push(api);
+    return api;
+  }
+
+  /* ---------------- 단계 목록 ---------------- */
+  const STEPS = [];
+  U.lectures.forEach((L, li) => {
+    STEPS.push({ kind: 'watch', li, name: '강의' });
+    if (L.quiz) STEPS.push({ kind: 'quiz', li, name: '익히기' });
+    (L.mindmaps || []).forEach((m, mi) => STEPS.push({ kind: 'mm', li, mi, name: L.mindmaps.length > 1 ? '마인드맵 ' + (mi + 1) : '마인드맵' }));
+    if (L.sentences) STEPS.push({ kind: 'sent', li, name: '문장 익히기' });
+  });
+  const lecLabel = li => `${U.lectures[li].no} ${U.lectures[li].title}`;
+  const stepDone = st => {
+    if (st.kind === 'watch') return vstate(U.lectures[st.li].id).done;
+    if (st.kind === 'quiz') return !!(S.quiz[st.li] && S.quiz[st.li].passed);
+    if (st.kind === 'mm') return !!(S.mm[st.li + '-' + st.mi] && S.mm[st.li + '-' + st.mi].passed);
+    if (st.kind === 'sent') return !!S.sent.submitted;
+  };
+  const firstOpen = () => { let i = 0; while (i < STEPS.length && stepDone(STEPS[i])) i++; return i; };
+  const allDone = () => firstOpen() >= STEPS.length;
+
+  /* ---------------- 스타일 ---------------- */
+  document.head.insertAdjacentHTML('beforeend', `<style>
+  :root{--bg:#f1f5f9;--card:#fff;--ink:#0f172a;--ink2:#334155;--muted:#64748b;--line:#e2e8f0;--brand:#0284c7;--brand2:#0369a1;--soft:#e0f2fe;--ok:#16a34a;--oksoft:#dcfce7;--bad:#dc2626;--badsoft:#fee2e2;--orange:#ea580c}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.6}
+  .wrap{max-width:1000px;margin:0 auto;padding:20px 16px 80px}
+  .top{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:14px} .top a{color:var(--brand2);text-decoration:none;font-weight:700}
+  .top .who{margin-left:auto;color:var(--muted)} .top .who button{border:0;background:none;color:var(--brand2);cursor:pointer;font:inherit;text-decoration:underline}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 18px -10px rgba(15,23,42,.18);margin-bottom:16px}
+  .badge{display:inline-block;font-size:12px;font-weight:800;color:var(--brand2);background:var(--soft);border-radius:6px;padding:2px 8px;margin-right:6px}
+  h1{font-size:24px;margin:8px 0 2px;font-weight:900} .muted{color:var(--muted);font-size:14px}
+  .prog{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+  .prow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 0;border-top:1px dashed var(--line)}
+  .prow .pl{font-size:14px;font-weight:700;min-width:240px;flex:1} .prow .pl small{color:var(--muted);font-weight:400;margin-left:4px}
+  .pills{display:flex;gap:6px;flex-wrap:wrap}
+  .pill{font:inherit;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 11px;border:1px solid var(--line);background:#f8fafc;color:#94a3b8;cursor:default}
+  .pill.open{color:var(--ink2);background:#fff;border-color:#cbd5e1;cursor:pointer}
+  .pill.done{color:var(--ok);background:var(--oksoft);border-color:#86efac;cursor:pointer}
+  .pill.on{color:#fff;background:var(--brand);border-color:var(--brand)}
+  h2{font-size:19px;margin:0 0 4px;font-weight:900} p.sub{margin:0 0 16px;color:var(--muted);font-size:14px}
+  .player{position:relative;width:100%;aspect-ratio:16/9;background:#0f172a;border-radius:12px;overflow:hidden}
+  .player>div,.player iframe{position:absolute;inset:0;width:100%;height:100%}
+  .player .msg{position:absolute;inset:0;display:grid;place-items:center;color:#cbd5e1;font-size:14px;text-align:center;padding:20px}
+  .bar{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-top:12px} .bar i{display:block;height:100%;background:var(--brand);width:0}
+  .bar.full i{background:var(--ok)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:10px;padding:12px 22px;font:inherit;font-weight:800;font-size:15px;cursor:pointer;background:var(--brand);color:#fff;text-decoration:none}
+  .btn:hover{background:var(--brand2)} .btn:disabled{background:#94a3b8;cursor:not-allowed}
+  .btn.ghost{background:#fff;color:var(--brand2);border:1px solid #bae6fd} .btn.sm{padding:7px 12px;font-size:13px;border-radius:8px}
+  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px} .grow{flex:1}
+  .note{font-size:13px;color:var(--muted)}
+  .notice{background:#fff7ed;border:1px solid #fdba74;color:#9a3412;border-radius:12px;padding:12px 16px;margin-bottom:14px;font-weight:700}
+  .q{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;background:#fff}
+  .q .qt{font-weight:700;margin-bottom:10px} .q .qn{color:var(--brand2);font-weight:900;margin-right:6px}
+  .opt{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);border-radius:8px;margin-top:6px;cursor:pointer;font-size:14.5px}
+  .opt:hover{background:#f8fafc} .opt input{margin-top:5px} .opt.sel{border-color:var(--brand);background:var(--soft)}
+  .panel{border-radius:12px;padding:16px 18px;margin:14px 0} .panel h3{margin:0 0 6px;font-size:16px}
+  .panel.ok{background:var(--oksoft);border:1px solid #86efac;color:#14532d} .panel.bad{background:var(--badsoft);border:1px solid #fca5a5;color:#7f1d1d}
+  .segs{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .seg{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #fecaca;border-radius:10px;padding:8px 10px;color:var(--ink)}
+  .seg .st{flex:1;font-size:14px} .seg .st small{display:block;color:var(--muted);font-size:12px}
+  .seg .cv{font-size:12px;font-weight:800;color:var(--muted);width:72px;text-align:right} .seg.full .cv{color:var(--ok)}
+  /* 마인드맵 */
+  .mm-root{text-align:center;margin-bottom:12px} .mm-root span{display:inline-block;font-size:20px;font-weight:900;border:3px solid var(--ink);border-radius:12px;padding:10px 20px;background:#fff}
+  .mm-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;border-top:3px solid var(--ink);padding-top:14px}
+  .mm-br{display:flex;flex-direction:column}
+  .mm-n{display:flex;flex-direction:column}
+  .mm-box{border:1px solid #94a3b8;border-radius:8px;padding:6px 10px;font-size:14px;background:#fff;min-height:36px;display:flex;flex-direction:column;justify-content:center}
+  .mm-br>.mm-n>.mm-box{border:2px solid var(--ink);font-weight:900;text-align:center;align-items:center}
+  .mm-box .hint{font-size:11px;color:var(--orange);font-weight:800;line-height:1.3}
+  .mm-kids{display:flex;flex-direction:column;gap:6px;margin:6px 0 0 10px;padding-left:10px;border-left:3px solid var(--ink)}
+  .slot{border:2px dashed #7dd3fc;background:#f0f9ff;cursor:pointer;color:#0369a1;font-weight:700;text-align:center}
+  .slot.filled{border-style:solid;border-color:var(--brand);background:#fff;color:var(--ink);font-weight:400;text-align:left}
+  .slot.target{box-shadow:0 0 0 3px #bae6fd}
+  .bank{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding:14px;border:1px dashed #cbd5e1;border-radius:12px;background:#f8fafc;min-height:56px}
+  .chip{border:1px solid #cbd5e1;background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;cursor:grab;text-align:left}
+  .chip.pick{border-color:var(--brand);background:var(--soft);box-shadow:0 0 0 2px #7dd3fc}
+  /* 문장 */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;background:#fff}
+  .sent .en{font-size:16px;font-weight:700;font-family:Georgia,'Times New Roman',serif;line-height:1.5} .sent .en b{color:var(--brand2);font-family:'Noto Sans KR',sans-serif;margin-right:8px;font-size:13px}
+  textarea.ans{width:100%;min-height:64px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px;resize:vertical;margin-top:8px}
+  textarea.ans:focus,input.name:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px #e0f2fe}
+  input.name{border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:16px;width:100%;max-width:320px}
+  .center{text-align:center;padding:36px 22px} .big{font-size:44px}
+  @media (max-width:640px){.mm-cols{grid-template-columns:1fr}.bank{position:sticky;bottom:8px;max-height:38vh;overflow:auto;box-shadow:0 -6px 18px -8px rgba(15,23,42,.25)}.prow .pl{min-width:0;flex-basis:100%}}
+  </style>`);
+  document.title = `Unit ${pad(U.id)} · ${U.title} | 천일문 기본`;
+
+  /* ---------------- 화면 ---------------- */
+  const app = document.getElementById('app');
+  let view = 0;
+
+  function shell() {
+    const open = firstOpen();
+    let html = `<div class="wrap">
+      <div class="top"><a href="index.html">← 목차</a><span class="who">학생: <b>${esc(student)}</b> <button id="chName">바꾸기</button></span></div>
+      <div class="card"><span class="badge">Unit ${pad(U.id)}</span><span class="muted">${esc(U.chapter)}</span>
+        <h1>${esc(U.title)}</h1>
+        <div class="muted">강의마다 <b>강의 → 익히기 → 마인드맵</b> 순서로 진행해요. 앞 단계를 마쳐야 다음 단계가 열려요.</div>
+        <div class="prog">${U.lectures.map((L, li) => `<div class="prow"><div class="pl">${esc(L.no)} ${esc(L.title)}<small>${esc(L.book)}</small></div><div class="pills">${
+          STEPS.map((st, i) => st.li !== li ? '' : `<button class="pill ${i === view ? 'on' : stepDone(st) ? 'done' : i <= open ? 'open' : ''}" data-i="${i}">${stepDone(st) ? '✓ ' : ''}${esc(st.name)}</button>`).join('')
+        }</div></div>`).join('')}</div>
+      </div><div id="stage"></div></div>`;
+    app.innerHTML = html;
+    $$('.pill').forEach(b => b.onclick = () => { const i = +b.dataset.i; if (i <= firstOpen()) go(i); });
+    $('#chName').onclick = () => { student = ''; store.set('cb_student', ''); stopPlayers(); start(); };
+  }
+  /* 영상을 끊지 않고 진도표 표시만 갱신 */
+  function refreshPills() {
+    const open = firstOpen();
+    $$('.pill').forEach(b => { const i = +b.dataset.i, st = STEPS[i], d = stepDone(st);
+      b.className = 'pill ' + (i === view ? 'on' : d ? 'done' : i <= open ? 'open' : '');
+      b.textContent = (d ? '✓ ' : '') + st.name; });
+  }
+  function go(i) { stopPlayers(); view = i; shell(); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  function next() { const i = STEPS.findIndex((st, k) => k > view && !stepDone(st)); if (i === -1) { if (allDone()) return finish(); go(Math.min(view + 1, STEPS.length - 1)); } else go(i); }
+  function nextLabel() { const k = view + 1; if (k >= STEPS.length) return 'Unit 마치기'; const st = STEPS[k]; return `다음: ${U.lectures[st.li].no} ${st.name} →`; }
+  function render() {
+    if (view >= STEPS.length) return renderDone();
+    const st = STEPS[view];
+    ({ watch: renderWatch, quiz: renderQuiz, mm: renderMM, sent: renderSent })[st.kind](st);
+  }
+  function finish() {
+    if (!store.get('cb_done_' + pad(U.id), false)) { store.set('cb_done_' + pad(U.id), true); log('unit_complete', {}); }
+    stopPlayers(); view = STEPS.length; shell(); renderDone(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function renderDone() {
+    $('#stage').innerHTML = `<div class="card center"><div class="big">🎉</div><h2>Unit ${pad(U.id)}을 모두 마쳤어요</h2>
+      <p class="sub">수고했어요.</p><div class="row" style="justify-content:center"><a class="btn ghost" href="index.html">목차로</a></div></div>`;
+  }
+  const doneBox = (title, body) => `<div class="panel ok"><h3>${title}</h3>${body || ''}</div><div class="row"><span class="grow"></span><button class="btn" id="goNext">${nextLabel()}</button></div>`;
+
+  /* ---------- 강의 ---------- */
+  function renderWatch(st) {
+    const L = U.lectures[st.li], vs = vstate(L.id), box = $('#stage');
+    box.innerHTML = `<div class="card">
+      <h2>${esc(L.no)} 강의 · ${esc(L.title)}</h2>
+      <p class="sub">강의를 ${Math.round(DONE_RATIO * 100)}% 이상 들으면 다음 단계가 열려요. 건너뛰거나 너무 빨리 감은 부분은 들은 것으로 치지 않아요.</p>
+      ${L.note ? `<div class="notice">${esc(L.note)}</div>` : ''}
+      <div class="player"><div id="yt"></div><div class="msg" id="ytMsg">강의를 불러오는 중…</div></div>
+      <div class="bar" id="wbar"><i></i></div>
+      <div class="row"><span class="grow note" id="wnote"></span><button class="btn" id="goNext" disabled>${nextLabel()}</button></div></div>`;
+    const set = dec(vs.ranges);
+    const upd = () => {
+      const c = vs.dur ? Math.min(1, set.size / Math.floor(vs.dur)) : 0;
+      $('#wbar i').style.width = Math.round(c * 100) + '%'; $('#wbar').classList.toggle('full', vs.done);
+      $('#wnote').textContent = vs.done ? '✓ 강의를 다 들었어요' : vs.dur ? `들은 부분 ${Math.round(c * 100)}%` : '';
+      $('#goNext').disabled = !vs.done;
+    };
+    upd();
+    let tick = 0;
+    const P = makePlayer('yt', L.id, ev => {
+      if (!vs.dur && ev.p.getDuration) vs.dur = ev.p.getDuration() || 0;
+      if (!ev.playing) return;
+      if (ev.jumped > 0) vs.seeks++;
+      vs.maxRate = Math.max(vs.maxRate, ev.rate);
+      if (ev.hidden) vs.hidden += ev.dt;
+      if (!ev.jumped) set.add(Math.floor(ev.t));
+      vs.pos = ev.t; vs.ranges = enc(set);
+      if (!vs.done && vs.dur && set.size / Math.floor(vs.dur) >= DONE_RATIO) {
+        vs.done = true;
+        log('lecture_done', { lecture: lecLabel(st.li), coverage: Math.round(set.size / Math.floor(vs.dur) * 100) + '%', seeks: vs.seeks, maxRate: vs.maxRate, hiddenSec: Math.round(vs.hidden) });
+        save(); refreshPills();
+      }
+      if (++tick % 4 === 0) save();
+      upd();
+    });
+    P.ready.then(p => { const m = $('#ytMsg'); m && m.remove(); if (!vs.done && vs.pos > 5) p.seekTo(Math.max(0, vs.pos - 3), true); })
+      .catch(e => { $('#ytMsg').textContent = ytErrMsg(e); });
+    $('#goNext').onclick = next;
+  }
+
+  /* ---------- 익히기 (객관식) ---------- */
+  function renderQuiz(st) {
+    const L = U.lectures[st.li], QS = L.quiz, box = $('#stage');
+    const Z = S.quiz[st.li] = S.quiz[st.li] || { passed: false, attempts: [], cur: null, review: null };
+    if (Z.passed) {
+      const last = Z.attempts[Z.attempts.length - 1];
+      box.innerHTML = `<div class="card"><h2>${esc(L.no)} 익히기</h2>${doneBox('통과했어요 ✓', `${QS.length}문항 모두 정답 · ${last.n}번째 응시`)}</div>`;
+      $('#goNext').onclick = next; return;
+    }
+    if (Z.review) return renderReview(st);
+    if (!Z.cur) { Z.cur = { order: shuffle(QS.map((_, i) => i)), ch: QS.map(q => shuffle(q.choices.map((_, i) => i))), picks: {} }; save(); }
+    const C = Z.cur, n = Z.attempts.length + 1;
+    box.innerHTML = `<div class="card"><h2>${esc(L.no)} 익히기 ${n > 1 ? `<span class="note">· ${n}번째 응시</span>` : ''}</h2>
+      <p class="sub">${QS.length}문항을 <b>모두</b> 맞혀야 다음 단계로 넘어가요. 틀리면 관련 강의 구간을 다시 듣고 재응시합니다.</p>
+      ${C.order.map((qi, k) => `<div class="q" data-q="${qi}"><div class="qt"><span class="qn">${k + 1}.</span>${esc(QS[qi].q)}</div>
+        ${C.ch[qi].map((ci, j) => `<label class="opt ${C.picks[qi] === ci ? 'sel' : ''}"><input type="radio" name="q${qi}" value="${ci}" ${C.picks[qi] === ci ? 'checked' : ''}><span>${NUM[j]} ${esc(QS[qi].choices[ci])}</span></label>`).join('')}</div>`).join('')}
+      <div class="row"><span class="grow note" id="qLeft"></span><button class="btn" id="qSubmit">제출하기</button></div></div>`;
+    const upd = () => { const left = QS.length - Object.keys(C.picks).length; $('#qLeft').textContent = left ? `아직 ${left}문항을 고르지 않았어요` : ''; $('#qSubmit').disabled = left > 0; };
+    $$('input[type=radio]', box).forEach(r => r.onchange = () => {
+      const qi = +r.name.slice(1); C.picks[qi] = +r.value; save();
+      $$(`.q[data-q="${qi}"] .opt`, box).forEach(o => o.classList.toggle('sel', $('input', o).checked)); upd();
+    });
+    upd();
+    $('#qSubmit').onclick = () => {
+      if (!confirm('제출할까요? 제출하면 답을 바꿀 수 없어요.')) return;
+      const wrong = QS.map((_, i) => i).filter(i => C.picks[i] !== QS[i].answer);
+      const att = { n, score: QS.length - wrong.length, total: QS.length, wrong: wrong.map(i => 'Q' + (i + 1)), at: Date.now() };
+      Z.attempts.push(att); Z.cur = null;
+      const passed = wrong.length === 0;
+      log('quiz_attempt', { lecture: lecLabel(st.li), attempt: n, score: `${att.score}/${QS.length}`, result: passed ? '통과' : '미통과', wrong: att.wrong.join(', ') });
+      if (passed) { Z.passed = true; save(); shell(); renderQuiz(st); return; }
+      const segs = [];
+      wrong.forEach(i => { const q = QS[i], key = q.from + '-' + q.to; if (!segs.some(s => s.key === key)) segs.push({ key, from: toSec(q.from), to: toSec(q.to), label: `${q.from} ~ ${q.to}`, watched: '', seeks: 0, maxRate: 1, hidden: 0 }); });
+      segs.sort((a, b) => a.from - b.from);
+      Z.review = { failedAt: Date.now(), segs }; save(); renderReview(st); window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+  function renderReview(st) {
+    const L = U.lectures[st.li], Z = S.quiz[st.li], R = Z.review, last = Z.attempts[Z.attempts.length - 1], box = $('#stage');
+    box.innerHTML = `<div class="card"><h2>${esc(L.no)} 익히기</h2>
+      <div class="panel bad"><h3>아직 통과하지 못했어요 (${last.score}/${last.total})</h3>
+        모두 맞혀야 통과예요. 정답은 알려주지 않아요. 아래 강의 구간을 다시 듣고 재응시하세요.
+        <div class="segs">${R.segs.map((s, i) => `<div class="seg" data-i="${i}"><span class="st"><b>${esc(L.no)} 강의 ${esc(s.label)}</b><small>${fmt(s.to - s.from)} 분량</small></span><span class="cv"></span><button class="btn sm ghost" data-play="${i}">▶ 다시 듣기</button></div>`).join('')}</div></div>
+      <div class="player"><div id="ytR"></div><div class="msg" id="rvMsg">위에서 ‘다시 듣기’를 누르세요</div></div>
+      <div class="row"><span class="grow note">다시 들은 기록은 선생님께 함께 전달돼요.</span><button class="btn" id="qRetry">재응시하기</button></div></div>`;
+    let cur = -1, set = null;
+    const upd = () => $$('.seg', box).forEach(el => { const s = R.segs[+el.dataset.i], c = Math.min(1, dec(s.watched).size / Math.max(1, s.to - s.from)); $('.cv', el).textContent = c ? Math.round(c * 100) + '% 들음' : ''; el.classList.toggle('full', c >= 0.9); });
+    upd();
+    const P = makePlayer('ytR', L.id, ev => {
+      if (cur < 0 || !ev.playing) return; const s = R.segs[cur];
+      if (ev.jumped > 0) s.seeks++;
+      s.maxRate = Math.max(s.maxRate, ev.rate); if (ev.hidden) s.hidden += ev.dt;
+      const sec = Math.floor(ev.t);
+      if (!ev.jumped && sec >= s.from && sec < s.to) { set.add(sec); s.watched = enc(set); save(); upd(); }
+      if (ev.t >= s.to) ev.p.pauseVideo();
+    });
+    P.ready.catch(e => { $('#rvMsg').textContent = ytErrMsg(e); });
+    $$('[data-play]', box).forEach(b => b.onclick = () => {
+      cur = +b.dataset.play; const s = R.segs[cur]; set = dec(s.watched); P.reset();
+      P.ready.then(p => { const m = $('#rvMsg'); m && m.remove(); p.loadVideoById({ videoId: L.id, startSeconds: s.from, endSeconds: s.to }); });
+    });
+    $('#qRetry').onclick = () => {
+      const elapsed = (Date.now() - R.failedAt) / 1000, total = R.segs.reduce((a, s) => a + s.to - s.from, 0), flags = [];
+      const detail = R.segs.map(s => {
+        const c = dec(s.watched).size / Math.max(1, s.to - s.from);
+        if (c < 0.8) flags.push(`${s.label} ${Math.round(c * 100)}%만 들음`);
+        if (s.seeks >= 2) flags.push(`${s.label} 건너뛰기 ${s.seeks}회`);
+        if (s.maxRate > 1.5) flags.push(`${s.label} ${s.maxRate}배속`);
+        if (s.hidden > 20) flags.push(`${s.label} 다른 창 ${Math.round(s.hidden)}초`);
+        return `${s.label}: ${Math.round(c * 100)}% (건너뛰기 ${s.seeks}, 최대 ${s.maxRate}배속, 다른 창 ${Math.round(s.hidden)}초)`;
+      });
+      if (elapsed < total * 0.8) flags.push(`재응시까지 ${fmt(elapsed)} (다시 들을 구간 합계 ${fmt(total)})`);
+      if (flags.length && !confirm('아직 다 듣지 않은 구간이 있어요. 그래도 재응시할까요?\n(다시 들은 기록은 선생님께 전달돼요)')) return;
+      log('quiz_retry', { lecture: lecLabel(st.li), attempt: Z.attempts.length + 1, elapsed: fmt(elapsed), segTotal: fmt(total), review: detail.join(' / '), flags: flags.join(' / ') });
+      Z.review = null; save(); stopPlayers(); renderQuiz(st); window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+
+  /* ---------- 마인드맵 ---------- */
+  function renderMM(st) {
+    const L = U.lectures[st.li], M = L.mindmaps[st.mi], k = st.li + '-' + st.mi, box = $('#stage');
+    const Z = S.mm[k] = S.mm[k] || { passed: false, attempts: 0 };
+    if (Z.passed) { box.innerHTML = `<div class="card"><h2>${esc(L.no)} 마인드맵 · ${esc(M.title)}</h2>${doneBox('완성했어요 ✓', `${Z.attempts}번 만에 완성`)}</div>`; $('#goNext').onclick = next; return; }
+    const slots = [];
+    const node = (n, path) => {
+      const hint = n.h ? `<span class="hint">${esc(n.h)}</span>` : '';
+      let boxHtml;
+      if (n.b) { const id = slots.length; slots.push({ id, answer: n.t, where: path.join(' > ') }); boxHtml = `<div class="mm-box slot" data-slot="${id}">${hint}<span class="sv">?</span></div>`; }
+      else boxHtml = `<div class="mm-box">${hint}<span>${esc(n.t)}</span></div>`;
+      const kids = n.c ? `<div class="mm-kids">${n.c.map(c => node(c, path.concat(n.b ? '(빈칸)' : n.t))).join('')}</div>` : '';
+      return `<div class="mm-n">${boxHtml}${kids}</div>`;
+    };
+    const cols = M.branches.map(b => `<div class="mm-br">${node(b, [])}</div>`).join('');
+    const cards = shuffle(slots.map(s => s.answer).concat(M.distractors || [])).map((w, i) => ({ i, w }));
+    box.innerHTML = `<div class="card"><h2>${esc(L.no)} 마인드맵 · ${esc(M.title)}</h2>
+      <p class="sub">아래 카드를 빈칸에 채워 마인드맵을 완성하세요. 카드를 누른 뒤 빈칸을 누르면 들어가요(끌어다 놓아도 돼요). 채운 칸을 다시 누르면 빠져요. 필요 없는 카드도 섞여 있어요.</p>
+      <div class="mm-root"><span>${esc(M.root)}</span></div><div class="mm-cols">${cols}</div>
+      <div class="bank" id="bank"></div><div id="mmMsg"></div>
+      <div class="row"><span class="grow note" id="mmLeft"></span><button class="btn" id="mmCheck">확인하기</button></div></div>`;
+    const placed = {}; let pick = null;
+    const draw = () => {
+      const used = new Set(Object.values(placed));
+      $('#bank').innerHTML = cards.filter(c => !used.has(c.i)).map(c => `<button class="chip ${pick === c.i ? 'pick' : ''}" draggable="true" data-c="${c.i}">${esc(c.w)}</button>`).join('') || '<span class="note">카드를 모두 썼어요</span>';
+      $$('.slot', box).forEach(el => { const ci = placed[+el.dataset.slot]; $('.sv', el).textContent = ci == null ? '?' : cards[ci].w; el.classList.toggle('filled', ci != null); });
+      $$('.chip', box).forEach(ch => { ch.onclick = () => { pick = pick === +ch.dataset.c ? null : +ch.dataset.c; draw(); }; ch.ondragstart = e => e.dataTransfer.setData('text/plain', ch.dataset.c); });
+      const left = slots.length - Object.keys(placed).length;
+      $('#mmLeft').textContent = left ? `빈칸 ${left}개 남음` : '모든 빈칸을 채웠어요'; $('#mmCheck').disabled = left > 0;
+    };
+    $$('.slot', box).forEach(el => {
+      const sid = +el.dataset.slot;
+      el.onclick = () => { if (pick != null) { placed[sid] = pick; pick = null; } else if (placed[sid] != null) delete placed[sid]; draw(); };
+      el.ondragover = e => { e.preventDefault(); el.classList.add('target'); };
+      el.ondragleave = () => el.classList.remove('target');
+      el.ondrop = e => { e.preventDefault(); el.classList.remove('target'); placed[sid] = +e.dataTransfer.getData('text/plain'); pick = null; draw(); };
+    });
+    draw();
+    $('#mmCheck').onclick = () => {
+      const wrong = slots.filter(s => cards[placed[s.id]].w !== s.answer);
+      Z.attempts++;
+      log('mindmap_attempt', { lecture: `${lecLabel(st.li)} · ${M.title}`, attempt: Z.attempts, score: `${slots.length - wrong.length}/${slots.length}`, result: wrong.length ? '미통과' : '통과', wrong: wrong.map(s => s.answer).join(', ') });
+      if (!wrong.length) { Z.passed = true; save(); shell(); renderMM(st); return; }
+      save();
+      $('#mmMsg').innerHTML = `<div class="panel bad"><h3>${slots.length}칸 중 ${wrong.length}칸이 틀렸어요</h3>어느 칸인지는 알려주지 않아요. 다시 생각해서 고쳐 보세요.</div>`;
+    };
+  }
+
+  /* ---------- 문장 익히기 (해석 쓰기) ---------- */
+  function renderSent(st) {
+    const L = U.lectures[st.li], T = L.sentences, box = $('#stage'), DK = KEY + '_sent_draft', draft = store.get(DK, {});
+    if (S.sent.submitted) { box.innerHTML = `<div class="card"><h2>${esc(T.title)}</h2>${doneBox('제출했어요 ✓', '선생님이 채점한 뒤 알려줄 거예요.')}</div>`; $('#goNext').onclick = next; return; }
+    box.innerHTML = `<div class="card"><h2>${esc(T.title)}</h2><p class="sub">${esc(T.intro)}</p>
+      ${T.items.map(it => `<div class="sent"><div class="en"><b>${it.no}</b>${esc(it.en)}</div><textarea class="ans" data-no="${it.no}" placeholder="끊어 읽으며 해석을 쓰세요">${esc(draft[it.no] || '')}</textarea></div>`).join('')}
+      <div class="row"><span class="grow note" id="sLeft"></span><button class="btn" id="sSubmit">제출하기</button></div></div>`;
+    const upd = () => { const left = $$('textarea.ans', box).filter(t => t.value.trim().length < 2).length; $('#sLeft').textContent = left ? `아직 쓰지 않은 문장이 ${left}개 있어요 · 쓴 내용은 자동으로 임시 저장돼요` : '모두 썼어요'; $('#sSubmit').disabled = left > 0; };
+    $$('textarea.ans', box).forEach(t => t.oninput = () => { draft[t.dataset.no] = t.value; store.set(DK, draft); upd(); });
+    upd();
+    $('#sSubmit').onclick = () => {
+      if (!confirm('제출할까요? 제출하면 고칠 수 없어요.')) return;
+      const text = [`[천일문 기본 Unit ${pad(U.id)}] ${T.title}`, `학생: ${student}`, `제출: ${new Date().toLocaleString('ko-KR')}`, '']
+        .concat(T.items.map(it => `${it.no}. ${it.en}\n답: ${($(`textarea.ans[data-no="${it.no}"]`, box).value || '').trim()}`)).join('\n');
+      log('reading_submit', { lecture: lecLabel(st.li), answersText: text });
+      S.sent.submitted = true; save(); shell(); renderSent(st);
+    };
+  }
+
+  /* ---------------- 시작 ---------------- */
+  function start() {
+    if (!student) {
+      app.innerHTML = `<div class="wrap"><div class="top"><a href="index.html">← 목차</a></div>
+        <div class="card" style="max-width:480px;margin:40px auto"><span class="badge">Unit ${pad(U.id)}</span>
+        <h2 style="margin-top:10px">이름을 입력하세요</h2><p class="sub">공부한 기록이 이 이름으로 선생님께 전달돼요.</p>
+        <input class="name" id="nm" placeholder="이름"><div class="row"><button class="btn" id="nmGo">시작하기</button></div></div></div>`;
+      const ok = () => { const v = $('#nm').value.trim(); if (!v) return $('#nm').focus(); student = v; store.set('cb_student', v); log('start', {}); start(); };
+      $('#nmGo').onclick = ok; $('#nm').onkeydown = e => { if (e.key === 'Enter') ok(); };
+      return;
+    }
+    if (!S.opened) { S.opened = Date.now(); save(); log('unit_open', {}); }
+    view = allDone() ? STEPS.length : firstOpen();
+    shell(); render();
+  }
+  flush(); start();
+})();
+
+</script>
 </body>
 </html>
