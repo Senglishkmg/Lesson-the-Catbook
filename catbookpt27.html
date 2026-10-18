@@ -1074,14 +1074,24 @@ window.UNIT = {
     let lastT = null, lastW = null;
     api.reset = () => { lastT = null; lastW = null; };
     api.ready.then(() => {
-      api.timer = setInterval(() => {
+      let lastRate = 1;
+      const tick = () => {
         const p = api.player; if (!p || !p.getPlayerState) return;
         const playing = p.getPlayerState() === 1, t = p.getCurrentTime() || 0, rate = p.getPlaybackRate ? p.getPlaybackRate() : 1, now = performance.now();
-        let jumped = 0;
-        if (lastT !== null && playing) { const exp = lastT + (now - lastW) / 1000 * rate; if (Math.abs(t - exp) > 3) jumped = t - exp; }
-        const dt = lastW ? (now - lastW) / 1000 : 0; lastT = t; lastW = now;
-        onTick({ t, playing, rate, jumped, hidden: document.hidden, dt, p });
-      }, 500);
+        const prevT = lastT, dt = lastW ? (now - lastW) / 1000 : 0;
+        let jumped = 0; const secs = [];
+        if (prevT !== null) {
+          const d = t - prevT, maxD = dt * Math.max(rate, lastRate) + 3;
+          if (d > maxD) jumped = d;                                   // 앞으로 건너뜀
+          else if (d >= 0) { for (let k = Math.floor(prevT); k <= Math.floor(t); k++) secs.push(k); }   // 정상 재생(멈춘 시간 포함)
+          // d < 0 : 뒤로 돌아감 → 들은 것으로 치지 않음
+        }
+        lastT = t; lastW = now; lastRate = rate;
+        onTick({ t, playing, rate, jumped, hidden: document.hidden, dt, p, secs: (playing || d0(prevT, t)) ? secs : [] });
+      };
+      const d0 = (a, b) => a !== null && b > a + 0.5;   // 멈춘 상태지만 직전 감시 이후 재생된 경우
+      tick();
+      api.timer = setInterval(tick, 500);
     });
     players.push(api);
     return api;
@@ -1235,12 +1245,12 @@ window.UNIT = {
     upd();
     let tick = 0;
     const P = makePlayer('yt', L.id, ev => {
-      if (!vs.dur && ev.p.getDuration) vs.dur = ev.p.getDuration() || 0;
-      if (!ev.playing) return;
+      { const d = ev.p.getDuration ? ev.p.getDuration() : 0; if (d > 0) vs.dur = d; }
+      ev.secs.forEach(k => set.add(k));
+      if (!ev.playing && !ev.secs.length) return;
       if (ev.jumped > 0) vs.seeks++;
       vs.maxRate = Math.max(vs.maxRate, ev.rate);
       if (ev.hidden) vs.hidden += ev.dt;
-      if (!ev.jumped) set.add(Math.floor(ev.t));
       vs.pos = ev.t; vs.ranges = enc(set);
       if (!vs.done && vs.dur && set.size / Math.floor(vs.dur) >= DONE_RATIO) {
         vs.done = true;
@@ -1304,11 +1314,10 @@ window.UNIT = {
     const upd = () => $$('.seg', box).forEach(el => { const s = R.segs[+el.dataset.i], c = Math.min(1, dec(s.watched).size / Math.max(1, s.to - s.from)); $('.cv', el).textContent = c ? Math.round(c * 100) + '% 들음' : ''; el.classList.toggle('full', c >= 0.9); });
     upd();
     const P = makePlayer('ytR', L.id, ev => {
-      if (cur < 0 || !ev.playing) return; const s = R.segs[cur];
+      if (cur < 0 || (!ev.playing && !ev.secs.length)) return; const s = R.segs[cur];
       if (ev.jumped > 0) s.seeks++;
       s.maxRate = Math.max(s.maxRate, ev.rate); if (ev.hidden) s.hidden += ev.dt;
-      const sec = Math.floor(ev.t);
-      if (!ev.jumped && sec >= s.from && sec < s.to) { set.add(sec); s.watched = enc(set); save(); upd(); }
+      const add = ev.secs.filter(k => k >= s.from && k < s.to); if (add.length) { add.forEach(k => set.add(k)); s.watched = enc(set); save(); upd(); }
       if (ev.t >= s.to) ev.p.pauseVideo();
     });
     P.ready.catch(e => { $('#rvMsg').textContent = ytErrMsg(e); });
