@@ -3,5 +3,5 @@
    아래 따옴표 안에 붙여 넣으세요. (https://script.google.com/macros/s/....../exec)
    비워 두면 기록이 시트로 가지 않고 학생 브라우저에만 남습니다. */
 window.LESSON_CONFIG = {
-  endpoint: ''
+  endpoint: 'https://script.google.com/macros/s/AKfycbxLvdo8MVyA0UZW5nIlrOg541A7qAnQuLQ4L33IwjkWqrhmd5o-2-qiMYt6PO9io8j-wA/exec'
 };
